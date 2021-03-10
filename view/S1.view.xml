@@ -1,0 +1,782 @@
+<!--
+
+    Copyright (C) 2009-2019 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<mvc:View 
+	controllerName="fin.ar.lineitems.display1.view.S1"
+	xmlns="sap.m" 
+	xmlns:core="sap.ui.core"  
+	xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	xmlns:f="sap.f" 
+	xmlns:footerbar="sap.ushell.ui.footerbar"
+	xmlns:html="http://www.w3.org/1999/xhtml" 
+	xmlns:l="sap.ui.layout" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:smartfilterbar="sap.ui.comp.smartfilterbar" 
+	xmlns:smarttable="sap.ui.comp.smarttable"
+	xmlns:smartlink="sap.ui.comp.navpopover" 
+	xmlns:table="sap.ui.table"
+	xmlns:unified="sap.ui.unified" 
+	xmlns:variants="sap.ui.comp.smartvariants">
+
+	<f:DynamicPage 
+		id="fin.ar.lineitems.display1.Page" busy="{appView>/busy}" busyIndicatorDelay="400" 
+		headerExpanded="{page>/headerExpanded}" preserveHeaderStateOnScroll="false" fitContent="true"
+		showFooter="false" >
+		<f:title>
+			<f:DynamicPageTitle id="fin.ar.lineitems.display1.PageTitle">
+				<f:heading>
+					<variants:SmartVariantManagement id="fin.ar.lineitems.display1.PageVariant"
+						showExecuteOnSelection="true" showShare="true"/>
+				</f:heading>
+				<f:actions>
+					<ToolbarSpacer/>
+					<Button id="fin.ar.lineitems.display1.ToggleHeaderButton" text="{path:'page>/headerExpanded', formatter:'.formatToggleButtonText'}" 
+						type="Transparent" press="onToggleHeaderPressed"/>
+					<Button id="fin.ar.lineitems.display1.ShareButton" icon="sap-icon://action" tooltip="{i18nLib>SHARE_BUTTON}" 
+						type="Transparent" press="onShareButtonPressed"/>
+				</f:actions>
+				<f:snappedContent>
+					<Text id="fin.ar.lineitems.display1.FilterText" wrapping="false"></Text>
+				</f:snappedContent>
+			</f:DynamicPageTitle>
+		</f:title>
+		<f:header>
+			<f:DynamicPageHeader id="fin.ar.lineitems.display1.PageHeader" pinnable="false">
+				<f:content>
+					<!-- Invisible text needed for screenreader -->
+					<core:InvisibleText id="fin.ar.lineitems.display1.InvisibleText.ClearingStatus" text="{i18nLib>LABEL_CLEARINGSTATUS}" />
+					<core:InvisibleText id="fin.ar.lineitems.display1.InvisibleText.AccountingDocumentType" text="{i18nLib>LABEL_ACCDOCTYPE}" />
+					<smartfilterbar:SmartFilterBar
+						id="fin.ar.lineitems.display1.SmartFilterBar" entitySet="Items"
+						search="onSearchButtonPressed" reset="onReset" initialise="onInitSmartFilterBar"
+						beforeVariantSave="onBeforeVariantSave" afterVariantLoad="onAfterVariantLoad"
+						persistencyKey="fin.ar.lineitems.display1.view.S1"
+						smartVariant="fin.ar.lineitems.display1.PageVariant" useToolbar="false" assignedFiltersChanged="onAssignedFiltersChanged">
+						<smartfilterbar:customData>
+							<core:CustomData key="defaultDropDownDisplayBehaviour"
+								value="descriptionOnly" />
+							<core:CustomData key="defaultTokenDisplayBehaviour"
+								value="idAndDescription" />
+							<core:CustomData key="dateFormatSettings"
+								value='\{"UTC":true,"style":"short"\}' />
+						</smartfilterbar:customData>
+						<smartfilterbar:layoutData>
+							<FlexItemData shrinkFactor="0" />
+						</smartfilterbar:layoutData>
+						<smartfilterbar:controlConfiguration>
+							<smartfilterbar:ControlConfiguration
+								id="fin.ar.lineitems.display1.ValueHelpCustomer" key="Customer"
+								index="0" groupId="_BASIC" />
+							<smartfilterbar:ControlConfiguration
+								id="fin.ar.lineitems.display1.ValueHelpCompany" key="CompanyCode"
+								index="1" groupId="_BASIC" />
+							<smartfilterbar:ControlConfiguration
+								id="fin.ar.lineitems.display1.SelectClearingStatus" key="CustomClearingStatus"
+								label="{i18nLib>LABEL_CLEARINGSTATUS}" controlType="dropDownList"
+								index="2" groupId="_BASIC" mandatory="mandatory">
+								<smartfilterbar:customControl>
+									<Select id="fin.ar.lineitems.display1.CustomSelectClearingStatus"
+										selectedKey="O" change="onClearingStatusChange"
+										ariaLabelledBy="fin.ar.lineitems.display1.InvisibleText.ClearingStatus">
+										<core:Item key="O" text="{i18nLib>SELECT_CLEARINGSTATUS_OPEN}" />
+										<core:Item key="C" text="{i18nLib>SELECT_CLEARINGSTATUS_CLEARED}" />
+										<core:Item key="A" text="{i18nLib>SELECT_CLEARINGSTATUS_ALL}" />
+									</Select>
+								</smartfilterbar:customControl>
+							</smartfilterbar:ControlConfiguration>
+							<smartfilterbar:ControlConfiguration
+								id="fin.ar.lineitems.display1.DateClearingDate" key="ClearingDate"
+								conditionType="{module: 'sap.fin.central.lib.daterange.FiscalDateRangeType', entitySetForFiscalYearVariant: 'CompanyCodeForFiscalYearVariantSet'}"
+								index="3" groupId="_BASIC" visible="false" />
+							<smartfilterbar:ControlConfiguration
+								id="fin.ar.lineitems.display1.DateKeyDate" key="KeyDate"
+								controlType="date" filterType="single" index="4" hasTypeAhead="false" groupId="_BASIC" />
+							<smartfilterbar:ControlConfiguration
+								id="fin.ar.lineitems.display1.DateEntryDate" key="AccountingDocumentCreationDate"
+								controlType="date" filterType="interval" index="5" hasTypeAhead="false"
+								groupId="fin.ar.lineitems.display1.AccountingDocumentGroup" />
+							<smartfilterbar:ControlConfiguration
+								id="fin.ar.lineitems.display1.InputFiscalYearPeriodInterval" key="FiscalYearPeriod"
+								controlType="input" index="6" groupId="_BASIC" visible="false" />
+							<smartfilterbar:ControlConfiguration
+								id="fin.ar.lineitems.display1.DatePostingDate" key="PostingDate"
+								conditionType="{module: 'sap.fin.central.lib.daterange.FiscalDateRangeType', entitySetForFiscalYearVariant: 'CompanyCodeForFiscalYearVariantSet'}"
+								index="7" groupId="_BASIC" visible="false" />
+							<smartfilterbar:ControlConfiguration
+								id="fin.ar.lineitems.display1.MultiComboBoxDueItemCategory" key="DueItemCategory"
+								label="{i18nLib>LABEL_ACCDOCTYPE}" controlType="dropDownList" width="20em"
+								hasValueHelpDialog="false" index="8" groupId="_BASIC" mandatory="mandatory">
+								<smartfilterbar:customControl>
+									<MultiComboBox
+										id="fin.ar.lineitems.display1.CustomMultiComboBoxDueItemCategory"
+										selectionChange="onTypeSelectionChange"
+										customData:hasValue="true"
+										ariaLabelledBy="fin.ar.lineitems.display1.InvisibleText.AccountingDocumentType">
+										<items>
+											<core:Item id="fin.ar.lineitems.display1.ItemNormal"
+												key="N" text="{i18n>CUSTOMER_ITEM_TYPE_NORMAL}" />
+											<core:Item id="fin.ar.lineitems.display1.ItemSpecialGL"
+												key="S" text="{i18n>CUSTOMER_ITEM_TYPE_SPECIAL_GL}" />
+											<core:Item id="fin.ar.lineitems.display1.ItemNoted"
+												key="M" text="{i18n>CUSTOMER_ITEM_TYPE_NOTED}" />
+											<core:Item id="fin.ar.lineitems.display1.ItemParked"
+												key="P" text="{i18n>CUSTOMER_ITEM_TYPE_PARKED}" />
+											<core:Item id="fin.ar.lineitems.display1.ItemVendor"
+												key="V" text="{i18n>CUSTOMER_ITEM_TYPE_VENDOR}" />
+										</items>
+									</MultiComboBox>
+								</smartfilterbar:customControl>
+							</smartfilterbar:ControlConfiguration>
+							<smartfilterbar:ControlConfiguration
+								id="fin.ar.lineitems.display1.ValueHelpCompanyName" key="CompanyName"
+								visible="false" groupId="fin.ar.lineitems.display1.AccountingDocumentGroup" />
+							<smartfilterbar:ControlConfiguration
+								id="fin.ar.lineitems.display1.ValueHelpPostingKey" key="PostingKey"
+								groupId="fin.ar.lineitems.display1.AccountingDocumentGroup"
+								preventInitialDataFetchInValueHelpDialog="false" />
+							<smartfilterbar:ControlConfiguration
+								id="fin.ar.lineitems.display1.ValueHelpAccountingDocumentType"
+								key="AccountingDocumentType" groupId="fin.ar.lineitems.display1.AccountingDocumentGroup"
+								preventInitialDataFetchInValueHelpDialog="false" />
+							<smartfilterbar:ControlConfiguration
+								id="fin.ar.lineitems.display1.ValueHelpSpecialGLCode" key="SpecialGeneralLedgerCode"
+								groupId="fin.ar.lineitems.display1.AccountingDocumentGroup"
+								hasTypeAhead="false" visible="true"
+								preventInitialDataFetchInValueHelpDialog="false" />
+							<smartfilterbar:ControlConfiguration
+								id="fin.ar.lineitems.display1.ValueHelpDunningBlockingReasonCode"
+								key="DunningBlockingReasonCode" groupId="fin.ar.lineitems.display1.DunningGroup"
+								preventInitialDataFetchInValueHelpDialog="false" />
+							<smartfilterbar:ControlConfiguration
+								id="fin.ar.lineitems.display1.InputMaximumDunningLevel" key="MaximumDunningLevel"
+								groupId="fin.ar.lineitems.display1.DunningGroup"
+								preventInitialDataFetchInValueHelpDialog="false" />
+							<smartfilterbar:ControlConfiguration
+								id="fin.ar.lineitems.display1.InputDunningLevel" key="DunningLevel"
+								groupId="fin.ar.lineitems.display1.DunningGroup"
+								displayBehaviour="idOnly"
+								preventInitialDataFetchInValueHelpDialog="false" />
+							<smartfilterbar:ControlConfiguration
+								id="fin.ar.lineitems.display1.ValueHelpPaymentBlockingReason" key="PaymentBlockingReason"
+								groupId="fin.ar.lineitems.display1.PaymentGroup"
+								preventInitialDataFetchInValueHelpDialog="false" />
+						</smartfilterbar:controlConfiguration>
+					</smartfilterbar:SmartFilterBar>
+				</f:content>
+			</f:DynamicPageHeader>
+		</f:header>
+		<f:content>
+			<smarttable:SmartTable id="fin.ar.lineitems.display1.SmartTableItems"
+				entitySet="Items" smartFilterId="fin.ar.lineitems.display1.SmartFilterBar"
+				tableType="AnalyticalTable"
+				header="{i18nLib>ITEMS_COUNT_INITIAL}"
+				dataReceived="onDataReceived"
+				ignoredFields="CustomerSupplierAccount,GeneratedID,BooleanParameter,TuningParameter1,TuningParameter2,Customer,CustomerName,CompanyCode,CompanyName,ClearingStatus,AssignmentReference,AccountingDocument,AccountingDocumentItem,AccountingDocumentType,DocumentDate,SpecialGeneralLedgerCode,DueNetSymbol,CashDateDueNetSymbol,AmountInCompanyCodeCurrency,ClearingAccountingDocument,ClearingDocFiscalYear,DocumentItemText,FiscalYear,HasClearingAccountingDocument,ETag,CaseID"
+				beforeRebindTable="onBeforeRebindTable" afterVariantSave="onAfterTableVariantSave" afterVariantApply="onAfterTableVariantApply"
+				persistencyKey="fin.ar.line.items.display.TablePersoKey"
+				showOverlay="onShowOverlay"
+				beforeExport="onBeforeExport"
+				customData:p13nDialogSettings='\{"columns":\{"visible": true, "payload": \{"visibleItemsThreshold": 100\}\}\}' >
+				<smarttable:customData>
+					<core:CustomData key="dateFormatSettings"
+						value='\{"UTC":true,"style":"short"\}' />
+				</smarttable:customData>
+				<smarttable:layoutData>
+					<FlexItemData growFactor="1" baseSize="0%" />
+				</smarttable:layoutData>
+				<smarttable:semanticObjectController>
+					<smartlink:SemanticObjectController
+						beforePopoverOpens="onBeforePopoverOpens"
+						navigationTargetsObtained="onNavTargetsObtained" navigate="onPopoverLinkPressed"
+						prefetchDone="onPrefetchNavTargets" ignoredFields=""
+						prefetchNavigationTargets="true" />
+				</smarttable:semanticObjectController>
+				
+				<smarttable:customToolbar >
+					<OverflowToolbar id="fin.ar.lineitems.display1.OverflowToolbar" design="Transparent">
+						<ToolbarSpacer />
+							
+						<core:ExtensionPoint name="fin.ar.lineitems.display1.ExtensionPointTableToolbar" />
+							
+						<Button id="fin.ar.lineitems.display1.ChangeButton" type="Transparent" enabled="false"
+							text="{i18nLib>BUTTON_CHANGE_DOCUMENTS}" press="onButtonPressedChangeDocument" 
+							fieldGroupIds="enableIfAtLeastOneRowSelected" >
+						</Button>
+
+						<Button id="fin.ar.lineitems.display1.ButtonCreateCorrespondence" type="Transparent" enabled="false"
+							text="{i18nLib>BUTTON_SEND_CORRESPONDENCE}" press="onButtonPressedSendCorrespondence" 
+							visible="{SupportedNavigations>/Correspondence-create/supported}"
+							fieldGroupIds="enableIfExactlyOneRowSelected" >
+						</Button>
+
+						<Button id="fin.ar.lineitems.display1.ButtonBlockDunning" type="Transparent" enabled="false"
+							text="{i18n>BUTTON_BLOCK_DUNNING}" press="onButtonPressedDunningBlock"
+							fieldGroupIds="enableIfAtLeastOneRowSelected" >
+						</Button>
+
+						<Button id="fin.ar.lineitems.display1.ButtonUnblockDunning" type="Transparent" enabled="false"
+							text="{i18n>BUTTON_UNBLOCK_DUNNING}" press="onButtonPressedDunningUnblock"
+							fieldGroupIds="enableIfAtLeastOneRowSelected" >
+						</Button>
+
+						<Button id="fin.ar.lineitems.display1.ButtonBlockPayment" type="Transparent" enabled="false"
+							text="{i18nLib>BUTTON_BLOCK_PAYMENT}" press="onButtonPressedPaymentBlock"
+							fieldGroupIds="enableIfAtLeastOneRowSelected" >
+						</Button>
+
+						<Button id="fin.ar.lineitems.display1.ButtonUnblockPayment" type="Transparent" enabled="false"
+							text="{i18nLib>BUTTON_UNBLOCK_PAYMENT}" press="onButtonPressedPaymentUnblock"
+							fieldGroupIds="enableIfAtLeastOneRowSelected" >
+						</Button>
+
+					</OverflowToolbar>
+				</smarttable:customToolbar>
+
+
+				<table:AnalyticalTable id="fin.ar.lineitems.display1.TableItems"
+					enableColumnReordering="true" showColumnVisibilityMenu="false"
+					enableColumnFreeze="false" enableCellFilter="true"
+					visibleRowCountMode="Auto" rowSelectionChange="onRowSelectionChange" group="onTableGrouped">
+
+					<table:columns id="fin.ar.lineitems.display1.Columns">
+						<!-- With this extension point you're able to extend at the beginning 
+							of the line items table, i.e. insert columns -->
+						<core:ExtensionPoint
+							name="fin.ar.lineitems.display1.ExtensionPointTableColumnStart"></core:ExtensionPoint>
+						<!-- Customer is needed for navigation to correspondence app -->
+
+						<table:AnalyticalColumn grouped="false"
+							summed="false" autoResizable="true" width="10em" hAlign="Left"
+							id="fin.ar.lineitems.display1.ColumnCustomer" inResult="true"
+							leadingProperty="Customer" sortProperty="Customer"
+							filterProperty="Customer"
+							tooltip="{parts: [{path:'/#Item/Customer/@sap:quickinfo'}, {path:'/#Item/Customer/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.use1Fallback2'}">
+							<Label
+								text="{parts: [{path:'/#Item/Customer/@sap:heading'}, {path:'/#Item/Customer/@sap:label'}], formatter:'sap.fin.arp.lib.lineitems.util.Formatter.formatTableHeading'}"></Label>
+							<table:template>
+								<smartlink:SmartLink id="fin.ar.lineitems.display1.LinkCustomer"
+									semanticObject="Customer" text="{Customer}"
+									semanticObjectLabel="{/#Item/Customer/@sap:label}">
+								</smartlink:SmartLink>
+							</table:template>
+							<table:customData>
+								<core:CustomData key="p13nData"
+									value='\{"columnKey": "Customer", "maxLength": "10"}' />
+							</table:customData>
+						</table:AnalyticalColumn>
+
+						<!-- We have to select this column with inResult="true" because if 
+							we group by ID (in UI) we want to display the Name -->
+						<table:AnalyticalColumn visible="false"
+							width="150px" id="fin.ar.lineitems.display1.ColumnCustomerName"
+							grouped="false" summed="false" autoResizable="true" hAlign="Left"
+							inResult="true" leadingProperty="CustomerName" sortProperty="CustomerName"
+							filterProperty="CustomerName"
+							tooltip="{parts: [{path:'/#Item/CustomerName/@sap:quickinfo'}, {path:'/#Item/CustomerName/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.use1Fallback2'}">
+							<Label
+								text="{parts: [{path:'/#Item/CustomerName/@sap:heading'}, {path:'/#Item/CustomerName/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.formatTableHeading'}"></Label>
+							<table:template>
+								<Text text="{CustomerName}" wrapping="false"></Text>
+							</table:template>
+							<table:customData>
+								<core:CustomData key="p13nData"
+									value='\{"columnKey": "CustomerName"}' />
+							</table:customData>
+						</table:AnalyticalColumn>
+						
+						<!--Extension for Column City because City name needs to be called on load of application -->
+							<!-- We have to select this column with inResult="true" because if 
+							we group by ID (in UI) we want to display the Name -->
+						<table:AnalyticalColumn 
+							width="150px" id="fin.ar.lineitems.display1.CityName"
+							grouped="false" summed="false" autoResizable="true" hAlign="Left"
+							inResult="true" leadingProperty="CityName" sortProperty="CityName"
+							filterProperty="CityName">
+							<Label
+								text="{i18n>City}"></Label>
+							<table:template>
+								<Text text="{CityName}" wrapping="false"></Text>
+							</table:template>
+							<table:customData>
+								<core:CustomData key="p13nData"
+									value='\{"columnKey": "CityName"}' />
+							</table:customData>
+						</table:AnalyticalColumn>
+						
+						<!-- -->
+
+						<table:AnalyticalColumn grouped="false"
+							autoResizable="true" width="6em" hAlign="Left"
+							id="fin.ar.lineitems.display1.ColumnCompanyCode" inResult="true"
+							summed="false" leadingProperty="CompanyCode" sortProperty="CompanyCode"
+							filterProperty="CompanyCode"
+							tooltip="{parts: [{path:'/#Item/CompanyCode/@sap:quickinfo'}, {path:'/#Item/CompanyCode/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.use1Fallback2'}">
+							<!-- inResult: Column is part of the semantic key of the entity set, 
+								and we do not want to have aggregational behaviour -->
+							<Label
+								text="{parts: [{path:'/#Item/CompanyCode/@sap:heading'}, {path:'/#Item/CompanyCode/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.formatTableHeading'}"></Label>
+							<table:template>
+								<Text text="{CompanyCode}" wrapping="false"></Text>
+							</table:template>
+							<table:customData>
+								<core:CustomData key="p13nData"
+									value='\{"columnKey": "CompanyCode", "maxLength": "4"}' />
+							</table:customData>
+						</table:AnalyticalColumn>
+
+						<!-- We have to select this column with inResult="true" because if 
+							we group by ID (in UI) we want to display the Name -->
+						<table:AnalyticalColumn grouped="false"
+							hAlign="Left" id="fin.ar.lineitems.display1.ColumnCompanyName"
+							visible="false" autoResizable="true" width="150px" inResult="true"
+							summed="false" leadingProperty="CompanyName" sortProperty="CompanyName"
+							filterProperty="CompanyName"
+							tooltip="{parts: [{path:'/#Item/CompanyName/@sap:quickinfo'}, {path:'/#Item/CompanyName/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.use1Fallback2'}">
+							<Label
+								text="{parts: [{path:'/#Item/CompanyName/@sap:heading'}, {path:'/#Item/CompanyName/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.formatTableHeading'}"></Label>
+							<table:template>
+								<Text text="{CompanyName}" wrapping="false"></Text>
+							</table:template>
+							<table:customData>
+								<core:CustomData key="p13nData"
+									value='\{"columnKey": "CompanyName"}' />
+							</table:customData>
+						</table:AnalyticalColumn>
+
+						<table:AnalyticalColumn
+							id="fin.ar.lineitems.display1.ColumnClearingDate" visible="false"
+							grouped="false" autoResizable="true" hAlign="Left" summed="false"
+							width="10em" leadingProperty="ClearingDate" sortProperty="ClearingDate"
+							filterProperty="ClearingDate"
+							filterType="\{type:'sap.ui.model.type.Date', formatOptions:\{UTC: true\}\}"
+							tooltip="{parts: [{path:'/#Item/ClearingDate/@sap:quickinfo'}, {path:'/#Item/ClearingDate/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.use1Fallback2'}">
+							<Label
+								text="{parts: [{path:'/#Item/ClearingDate/@sap:heading'}, {path:'/#Item/ClearingDate/@sap:label'}], formatter:'sap.fin.arp.lib.lineitems.util.Formatter.formatTableHeading'}"></Label>
+							<table:template>
+								<smartlink:SmartLink
+									id="fin.ar.lineitems.display1.LinkClearingDate" semanticObject="ClearingAccountingDocument"
+									mapFieldToSemanticObject="false"
+									text="{path:'ClearingDate', formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.formatDate'}"
+									semanticObjectLabel="{/#Item/ClearingAccountingDocument/@sap:label}"
+									customData:columnId="fin.ar.lineitems.display1.LinkClearingDate">
+								</smartlink:SmartLink>
+							</table:template>
+							<table:customData>
+								<core:CustomData key="p13nData"
+									value='\{"columnKey": "ClearingDate", "type": "date"}' />
+							</table:customData>
+						</table:AnalyticalColumn>
+						
+						<table:AnalyticalColumn
+							id="fin.ar.lineitems.display1.ColumnClearingDocFiscalYear" visible="false"
+							inResult="true" grouped="false" autoResizable="true" hAlign="Left" 
+							summed="false" width="150px" leadingProperty="ClearingDocFiscalYear" 
+							sortProperty="ClearingDocFiscalYear" filterProperty="ClearingDocFiscalYear"
+							tooltip="{parts: [{path:'/#Item/ClearingDocFiscalYear/@sap:quickinfo'}, {path:'/#Item/ClearingDocFiscalYear/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.use1Fallback2'}">
+							<Label
+								text="{parts: [{path:'/#Item/ClearingDocFiscalYear/@sap:heading'}, {path:'/#Item/ClearingDocFiscalYear/@sap:label'}], formatter:'sap.fin.arp.lib.lineitems.util.Formatter.formatTableHeading'}"></Label>
+							<table:template>
+								<Text text="{path:'ClearingDocFiscalYear', formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.formatNUMC'}" wrapping="false"></Text>
+							</table:template>
+							<table:customData>
+								<core:CustomData key="p13nData"
+									value='\{"columnKey": "ClearingDocFiscalYear", "maxLength": "4"}' />
+							</table:customData>
+						</table:AnalyticalColumn>
+
+						<table:AnalyticalColumn grouped="false"
+							autoResizable="true" summed="false" hAlign="Center"
+							id="fin.ar.lineitems.display1.ColumnClearingStatusIcon"
+							leadingProperty="ClearingStatus" sortProperty="ClearingStatus"
+							filterProperty="" showFilterMenuEntry="false"
+							tooltip="{parts: [{path:'/#Item/ClearingStatus/@sap:quickinfo'}, {path:'/#Item/ClearingStatus/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.use1Fallback2'}"
+							width="5em">
+							<Label
+								text="{parts: [{path:'/#Item/ClearingStatus/@sap:heading'}, {path:'/#Item/ClearingStatus/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.formatTableHeading'}"></Label>
+							<table:template>
+								<core:Icon
+									color="{path:'ClearingStatus', formatter:'sap.fin.arp.lib.lineitems.util.Formatter.formatClearingStatusColor'}"
+									src="{path:'ClearingStatus', formatter:'sap.fin.arp.lib.lineitems.util.Formatter.formatClearingStatusIcon'}"
+									tooltip="{path:'ClearingStatus', formatter:'sap.fin.arp.lib.lineitems.util.Formatter.formatClearingStatusTooltip'}"
+									decorative="false">
+								</core:Icon>
+							</table:template>
+							<table:customData>
+								<core:CustomData key="p13nData"
+									value='\{"columnKey": "ClearingStatus"}' />
+							</table:customData>
+						</table:AnalyticalColumn>
+						
+						<table:AnalyticalColumn
+							id="fin.ar.lineitems.display1.ColumnCustomerSupplierAccount" grouped="false"
+							autoResizable="true" hAlign="Left" summed="false" width="150px"
+							leadingProperty="CustomerSupplierAccount" filterProperty="CustomerSupplierAccount"
+							sortProperty="CustomerSupplierAccount" visible="false"
+							tooltip="{path:'/#Item/CustomerSupplierAccount/@sap:label', formatter:'sap.fin.arp.lib.lineitems.util.Formatter.removeLeadingZeros'}">
+							<Label
+								text="{path:'/#Item/CustomerSupplierAccount/@sap:label'}"></Label>
+							<table:template>
+								<Text text="{path: 'CustomerSupplierAccount', formatter:'sap.fin.arp.lib.lineitems.util.Formatter.removeLeadingZeros'}" wrapping="false"></Text>
+							</table:template>
+							<table:customData>
+								<core:CustomData key="p13nData"
+									value='\{"columnKey": "CustomerSupplierAccount", "maxLength": "18"}' />
+							</table:customData>
+						</table:AnalyticalColumn>
+
+						<table:AnalyticalColumn width="150px"
+							autoResizable="true" grouped="false" hAlign="Left" summed="false"
+							id="fin.ar.lineitems.display1.ColumnAssignmentReference"
+							leadingProperty="AssignmentReference" sortProperty="AssignmentReference"
+							filterProperty="AssignmentReference"
+							tooltip="{parts: [{path:'/#Item/AssignmentReference/@sap:quickinfo'}, {path:'/#Item/AssignmentReference/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.use1Fallback2'}">
+							<Label
+								text="{parts: [{path:'/#Item/AssignmentReference/@sap:heading'}, {path:'/#Item/AssignmentReference/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.formatTableHeading'}"></Label>
+							<table:template>
+								<Text text="{AssignmentReference}" wrapping="false"></Text>
+							</table:template>
+							<table:customData>
+								<core:CustomData key="p13nData"
+									value='\{"columnKey": "AssignmentReference", "maxLength": "18"}' />
+							</table:customData>
+						</table:AnalyticalColumn>
+
+						<table:AnalyticalColumn summed="false"
+							grouped="false" autoResizable="true" width="10em" hAlign="Right"
+							id="fin.ar.lineitems.display1.ColumnDocumentDate"
+							filterType="\{type:'sap.ui.model.type.Date', formatOptions:\{UTC: true\}\}"
+							leadingProperty="DocumentDate" sortProperty="DocumentDate"
+							filterProperty="DocumentDate" sorted="true" sortOrder="Descending"
+							tooltip="{parts: [{path:'/#Item/DocumentDate/@sap:quickinfo'}, {path:'/#Item/DocumentDate/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.use1Fallback2'}">
+							<Label
+								text="{parts: [{path:'/#Item/DocumentDate/@sap:heading'}, {path:'/#Item/DocumentDate/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.formatTableHeading'}"></Label>
+							<table:template>
+								<Label
+									text="{path:'DocumentDate', formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.formatDate'}"></Label>
+							</table:template>
+							<table:customData>
+								<core:CustomData key="p13nData"
+									value='\{"columnKey": "DocumentDate", "type": "date"}' />
+							</table:customData>
+						</table:AnalyticalColumn>
+
+						<table:AnalyticalColumn width="10em"
+							autoResizable="true" grouped="false" hAlign="Left"
+							id="fin.ar.lineitems.display1.ColumnAccountingDocument" inResult="true"
+							summed="false" leadingProperty="AccountingDocument"
+							sortProperty="AccountingDocument" filterProperty="AccountingDocument"
+							sorted="true" sortOrder="Descending"
+							tooltip="{parts: [{path:'/#Item/AccountingDocument/@sap:quickinfo'}, {path:'/#Item/AccountingDocument/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.use1Fallback2'}">
+							<!-- inResult: Column is part of the semantic key of the entity set, 
+								and we do not want to have aggregational behaviour -->
+							<Label
+								text="{parts: [{path:'/#Item/AccountingDocument/@sap:heading'}, {path:'/#Item/AccountingDocument/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.formatTableHeading'}"></Label>
+							<table:template>
+								<smartlink:SmartLink
+									id="fin.ar.lineitems.display1.LinkCustomerAccountingDocument"
+									semanticObject="AccountingDocument" text="{AccountingDocument}"
+									semanticObjectLabel="{/#Item/AccountingDocument/@sap:label}"
+									customData:columnId="fin.ar.lineitems.display1.LinkAccountingDocument">
+								</smartlink:SmartLink>
+							</table:template>
+							<table:customData>
+								<core:CustomData key="p13nData"
+									value='\{"columnKey": "AccountingDocument", "maxLength": "10"}' />
+							</table:customData>
+						</table:AnalyticalColumn>
+
+						<table:AnalyticalColumn grouped="false"
+							autoResizable="true" width="150px" inResult="true" summed="false"
+							hAlign="Left" id="fin.ar.lineitems.display1.ColumnAccountingDocumentItem"
+							visible="false" leadingProperty="AccountingDocumentItem"
+							sortProperty="AccountingDocumentItem" filterProperty="AccountingDocumentItem"
+							tooltip="{parts: [{path:'/#Item/AccountingDocumentItem/@sap:quickinfo'}, {path:'/#Item/AccountingDocumentItem/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.use1Fallback2'}">
+							<!-- inResult: Column is part of the semantic key of the entity set, 
+								and we do not want to have aggregational behaviour -->
+							<Label
+								text="{parts: [{path:'/#Item/AccountingDocumentItem/@sap:heading'}, {path:'/#Item/AccountingDocumentItem/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.formatTableHeading'}"></Label>
+							<table:template>
+								<Text text="{AccountingDocumentItem}" wrapping="false"></Text>
+							</table:template>
+							<table:customData>
+								<core:CustomData key="p13nData"
+									value='\{"columnKey": "AccountingDocumentItem", "maxLength": "3"}' />
+							</table:customData>
+						</table:AnalyticalColumn>
+
+						<table:AnalyticalColumn autoResizable="true"
+							width="6em" grouped="false" hAlign="Left"
+							id="fin.ar.lineitems.display1.ColumnAccountingDocumentType"
+							summed="false" leadingProperty="AccountingDocumentType"
+							sortProperty="AccountingDocumentType" filterProperty="AccountingDocumentType"
+							tooltip="{parts: [{path:'/#Item/AccountingDocumentType/@sap:quickinfo'}, {path:'/#Item/AccountingDocumentType/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.use1Fallback2'}">
+							<Label
+								text="{parts: [{path:'/#Item/AccountingDocumentType/@sap:heading'}, {path:'/#Item/AccountingDocumentType/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.formatTableHeading'}"></Label>
+							<table:template>
+								<Text text="{AccountingDocumentType}" wrapping="false"></Text>
+							</table:template>
+							<table:customData>
+								<core:CustomData key="p13nData"
+									value='\{"columnKey": "AccountingDocumentType", "maxLength": "2"}' />
+							</table:customData>
+						</table:AnalyticalColumn>
+
+						<table:AnalyticalColumn autoResizable="true"
+							width="5em" grouped="false" hAlign="Left" summed="false"
+							id="fin.ar.lineitems.display1.ColumnSpecialGeneralLedgerCode"
+							leadingProperty="SpecialGeneralLedgerCode" sortProperty="SpecialGeneralLedgerCode"
+							filterProperty="SpecialGeneralLedgerCode"
+							tooltip="{parts: [{path:'/#Item/SpecialGeneralLedgerCode/@sap:quickinfo'}, {path:'/#Item/SpecialGeneralLedgerCode/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.use1Fallback2'}">
+							<Label
+								text="{parts: [{path:'/#Item/SpecialGeneralLedgerCode/@sap:heading'}, {path:'/#Item/SpecialGeneralLedgerCode/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.formatTableHeading'}"></Label>
+							<table:template>
+								<Text text="{SpecialGeneralLedgerCode}" wrapping="false"></Text>
+							</table:template>
+							<table:customData>
+								<core:CustomData key="p13nData"
+									value='\{"columnKey": "SpecialGeneralLedgerCode", "maxLength": "1"}' />
+							</table:customData>
+						</table:AnalyticalColumn>
+
+						<table:AnalyticalColumn grouped="false"
+							autoResizable="true" width="5em" summed="false" hAlign="Center"
+							id="fin.ar.lineitems.display1.ColumnDueNetSymbol"
+							leadingProperty="DueNetSymbol" sortProperty="DueNetSymbol"
+							filterProperty="" showFilterMenuEntry="false"
+							tooltip="{parts: [{path:'/#Item/DueNetSymbol/@sap:quickinfo'}, {path:'/#Item/DueNetSymbol/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.use1Fallback2'}">
+							<Label
+								text="{parts: [{path:'/#Item/DueNetSymbol/@sap:heading'}, {path:'/#Item/DueNetSymbol/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.formatTableHeading'}"></Label>
+							<table:template>
+								<core:Icon
+									color="{path:'DueNetSymbol', formatter:'sap.fin.arp.lib.lineitems.util.Formatter.formatDueNetSymbolColor'}"
+									src="{path:'DueNetSymbol', formatter:'sap.fin.arp.lib.lineitems.util.Formatter.formatDueNetSymbolIcon'}"
+									tooltip="{path:'DueNetSymbol', formatter:'sap.fin.arp.lib.lineitems.util.Formatter.formatDueNetSymbolTooltip'}"
+									decorative="false">
+								</core:Icon>
+							</table:template>
+							<table:customData>
+								<core:CustomData key="p13nData"
+									value='\{"columnKey": "DueNetSymbol"}' />
+							</table:customData>
+						</table:AnalyticalColumn>
+
+						<table:AnalyticalColumn grouped="false"
+							autoResizable="true" summed="false" hAlign="Center"
+							id="fin.ar.lineitems.display1.ColumnCashDateDueNetSymbol"
+							leadingProperty="CashDateDueNetSymbol" sortProperty="CashDateDueNetSymbol"
+							filterProperty="" showFilterMenuEntry="false"
+							tooltip="{parts: [{path:'/#Item/CashDateDueNetSymbol/@sap:quickinfo'}, {path:'/#Item/CashDateDueNetSymbol/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.use1Fallback2'}"
+							width="5em" visible="false">
+							<Label
+								text="{parts: [{path:'/#Item/CashDateDueNetSymbol/@sap:heading'}, {path:'/#Item/CashDateDueNetSymbol/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.formatTableHeading'}"></Label>
+							<table:template>
+								<core:Icon
+									color="{path:'CashDateDueNetSymbol', formatter:'sap.fin.arp.lib.lineitems.util.Formatter.formatDueNetSymbolColor'}"
+									src="{path:'CashDateDueNetSymbol', formatter:'sap.fin.arp.lib.lineitems.util.Formatter.formatDueNetSymbolIcon'}"
+									tooltip="{path:'CashDateDueNetSymbol', formatter:'sap.fin.arp.lib.lineitems.util.Formatter.formatDueNetSymbolTooltip'}">
+								</core:Icon>
+							</table:template>
+							<table:customData>
+								<core:CustomData key="p13nData"
+									value='\{"columnKey": "CashDateDueNetSymbol"}' />
+							</table:customData>
+						</table:AnalyticalColumn>
+
+						<table:AnalyticalColumn grouped="false"
+							autoResizable="true" width="15em" hAlign="Right" summed="true"
+							id="fin.ar.lineitems.display1.ColumnAmountInCompanyCodeCurrency"
+							leadingProperty="AmountInCompanyCodeCurrency" sortProperty="AmountInCompanyCodeCurrency"
+							filterProperty="AmountInCompanyCodeCurrency"
+							tooltip="{parts: [{path:'/#Item/AmountInCompanyCodeCurrency/@sap:quickinfo'}, {path:'/#Item/AmountInCompanyCodeCurrency/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.use1Fallback2'}">
+							<Label
+								text="{parts: [{path:'/#Item/AmountInCompanyCodeCurrency/@sap:heading'}, {path:'/#Item/AmountInCompanyCodeCurrency/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.formatTableHeading'}"
+								textAlign="End"></Label>
+							<table:template>
+								<unified:Currency
+									value="{path:'AmountInCompanyCodeCurrency', type:'sap.ui.model.type.String'}"
+									currency="{CompanyCodeCurrency}" useSymbol="false" />
+							</table:template>
+							<table:customData>
+								<core:CustomData key="p13nData"
+									value='\{"columnKey": "AmountInCompanyCodeCurrency", "type": "currency", "isCurrency": true, "unit": "CompanyCodeCurrency"}' />
+							</table:customData>
+						</table:AnalyticalColumn>
+
+						<table:AnalyticalColumn autoResizable="true"
+							width="150px" grouped="false" hAlign="Left" summed="false"
+							id="fin.ar.lineitems.display1.ColumnClearingAccountingDocument"
+							inResult="true" leadingProperty="ClearingAccountingDocument"
+							sortProperty="ClearingAccountingDocument" filterProperty="ClearingAccountingDocument"
+							tooltip="{parts: [{path:'/#Item/ClearingAccountingDocument/@sap:quickinfo'}, {path:'/#Item/ClearingAccountingDocument/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.use1Fallback2'}">
+							<Label
+								text="{parts: [{path:'/#Item/ClearingAccountingDocument/@sap:heading'}, {path:'/#Item/ClearingAccountingDocument/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.formatTableHeading'}"></Label>
+							<table:template>
+								<smartlink:SmartLink
+									id="fin.ar.lineitems.display1.LinkClearingAccountingDocument"
+									semanticObject="ClearingAccountingDocument"
+									additionalSemanticObjects="AccountingDocument"
+									mapFieldToSemanticObject="false"
+									text="{ClearingAccountingDocument}" semanticObjectLabel="{/#Item/ClearingAccountingDocument/@sap:label}"
+									customData:columnId="fin.ar.lineitems.display1.LinkClearingAccountingDocument">
+								</smartlink:SmartLink>
+							</table:template>
+							<table:customData>
+								<core:CustomData key="p13nData"
+									value='\{"columnKey": "ClearingAccountingDocument", "maxLength": "10"}' />
+							</table:customData>
+						</table:AnalyticalColumn>
+
+						<table:AnalyticalColumn autoResizable="true"
+							width="170px" grouped="false" hAlign="Left" summed="false"
+							visible="false" id="fin.ar.lineitems.display1.ColumnDocumentItemText"
+							leadingProperty="DocumentItemText" sortProperty="DocumentItemText"
+							filterProperty="DocumentItemText"
+							tooltip="{parts: [{path:'/#Item/DocumentItemText/@sap:quickinfo'}, {path:'/#Item/DocumentItemText/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.use1Fallback2'}">
+							<Label
+								text="{parts: [{path:'/#Item/DocumentItemText/@sap:heading'}, {path:'/#Item/DocumentItemText/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.formatTableHeading'}"></Label>
+							<table:template>
+								<Text text="{DocumentItemText}" wrapping="false"></Text>
+							</table:template>
+							<table:customData>
+								<core:CustomData key="p13nData"
+									value='\{"columnKey": "DocumentItemText"}' />
+							</table:customData>
+						</table:AnalyticalColumn>
+
+						<table:AnalyticalColumn grouped="false"
+							inResult="true" summed="false" autoResizable="true" width="150px"
+							hAlign="Left" id="fin.ar.lineitems.display1.ColumnFiscalYear"
+							leadingProperty="FiscalYear" sortProperty="FiscalYear"
+							filterProperty="FiscalYear"
+							tooltip="{parts: [{path:'/#Item/FiscalYear/@sap:quickinfo'}, {path:'/#Item/FiscalYear/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.use1Fallback2'}"
+							visible="false">
+							<!-- inResult: Column is part of the semantic key of the entity set, 
+								and we do not want to have aggregational behaviour -->
+							<Label
+								text="{parts: [{path:'/#Item/FiscalYear/@sap:heading'}, {path:'/#Item/FiscalYear/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.formatTableHeading'}"></Label>
+							<table:template>
+								<Text text="{FiscalYear}" wrapping="false"></Text>
+							</table:template>
+							<table:customData>
+								<core:CustomData key="p13nData"
+									value='\{"columnKey": "FiscalYear", "maxLength": "4"}' />
+							</table:customData>
+						</table:AnalyticalColumn>
+
+						<table:AnalyticalColumn grouped="false"
+							autoResizable="true" summed="false" width="7em" hAlign="Center"
+							id="fin.ar.lineitems.display1.ColumnHasClearingAccountingDocument"
+							leadingProperty="HasClearingAccountingDocument" sortProperty="HasClearingAccountingDocument"
+							filterProperty="" showFilterMenuEntry="false"
+							tooltip="{parts: [{path:'/#Item/HasClearingAccountingDocument/@sap:quickinfo'}, {path:'/#Item/HasClearingAccountingDocument/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.use1Fallback2'}"
+							visible="false">
+							<Label
+								text="{parts: [{path:'/#Item/HasClearingAccountingDocument/@sap:heading'}, {path:'/#Item/HasClearingAccountingDocument/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.formatTableHeading'}"></Label>
+							<table:template>
+								<core:Icon color="black"
+									src="{path:'HasClearingAccountingDocument', formatter:'sap.fin.arp.lib.lineitems.util.Formatter.formatIsClearedIcon'}"
+									tooltip="{path:'HasClearingAccountingDocument', formatter:'sap.fin.arp.lib.lineitems.util.Formatter.formatIsClearedTooltip'}">
+								</core:Icon>
+							</table:template>
+							<table:customData>
+								<core:CustomData key="p13nData"
+									value='\{"columnKey": "HasClearingAccountingDocument", "maxLength": "2"}' />
+							</table:customData>
+						</table:AnalyticalColumn>
+
+						<table:AnalyticalColumn grouped="false"
+							summed="false" autoResizable="true" width="5em"
+							hAlign="Left" id="fin.ar.lineitems.display1.ColumnSenderFiscalYear"
+							leadingProperty="SenderFiscalYear" sortProperty="SenderFiscalYear"
+							filterProperty="SenderFiscalYear"
+							tooltip="{parts: [{path:'/#Item/SenderFiscalYear/@sap:quickinfo'}, {path:'/#Item/SenderFiscalYear/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.use1Fallback2'}"
+							visible="false">
+							<Label
+								text="{parts: [{path:'/#Item/SenderFiscalYear/@sap:heading'}, {path:'/#Item/SenderFiscalYear/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.formatTableHeading'}"></Label>
+							<table:template>
+								<Text text="{path:'SenderFiscalYear', formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.formatNUMC'}" wrapping="false"></Text>
+							</table:template>
+							<table:customData>
+								<core:CustomData key="p13nData"
+									value='\{"columnKey": "SenderFiscalYear", "maxLength": "4"}' />
+							</table:customData>
+						</table:AnalyticalColumn>
+						
+						<table:AnalyticalColumn grouped="false"
+							summed="false" autoResizable="true" width="150px" hAlign="Left"
+							id="fin.ar.lineitems.display1.ColumnCaseId" inResult="true" visible="false"
+							leadingProperty="CaseID" sortProperty="CaseID"
+							filterProperty="CaseID"
+							tooltip="{parts: [{path:'/#Item/CaseID/@sap:quickinfo'}, {path:'/#Item/CaseID/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.use1Fallback2'}">
+							<Label
+								text="{parts: [{path:'/#Item/CaseID/@sap:heading'}, {path:'/#Item/CaseID/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.formatTableHeading'}"></Label>
+							<table:template>
+								<smartlink:SmartLink id="fin.ar.lineitems.display1.LinkDisputeCase"
+									semanticObject="DisputeCase" text="{CaseID}"
+									semanticObjectLabel="{/#Item/DisputeCase/@sap:label}">
+								</smartlink:SmartLink>
+							</table:template>
+							<table:customData>
+								<core:CustomData key="p13nData"
+									value='\{"columnKey": "CaseID", "maxLength": "12"}' />
+							</table:customData>
+						</table:AnalyticalColumn>
+						
+						<table:AnalyticalColumn autoResizable="true"
+							width="5em" grouped="false" hAlign="Left" summed="false" inResult="true" visible="false"
+							id="fin.ar.lineitems.display1.ColumnDisputeCaseUUID"
+							leadingProperty="DisputeCaseUUID" sortProperty="DisputeCaseUUID"
+							filterProperty="DisputeCaseUUID"
+							tooltip="{parts: [{path:'/#Item/DisputeCaseUUID/@sap:quickinfo'}, {path:'/#Item/DisputeCaseUUID/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.use1Fallback2'}">
+							<Label
+								text="{parts: [{path:'/#Item/DisputeCaseUUID/@sap:heading'}, {path:'/#Item/DisputeCaseUUID/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.formatTableHeading'}"></Label>
+							<table:template>
+								<Text text="{DisputeCaseUUID}" wrapping="false"></Text>
+							</table:template>
+							<table:customData>
+								<core:CustomData key="p13nData"
+									value='\{"columnKey": "DisputeCaseUUID", "maxLength": "32"}' />
+							</table:customData>
+						</table:AnalyticalColumn>
+						
+						<table:AnalyticalColumn autoResizable="true"
+							width="5em" grouped="false" hAlign="Left" summed="false" inResult="true" visible="false"
+							id="fin.ar.lineitems.display1.ColumnFinancialAccountType"
+							leadingProperty="FinancialAccountType" sortProperty="FinancialAccountType"
+							filterProperty="FinancialAccountType"
+							tooltip="{parts: [{path:'/#Item/FinancialAccountType/@sap:label'}, {path:'/#Item/FinancialAccountType/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.use1Fallback2'}">
+							<Label
+								text="{parts: [{path:'/#Item/FinancialAccountType/@sap:heading'}, {path:'/#Item/FinancialAccountType/@sap:label'}], formatter: 'sap.fin.arp.lib.lineitems.util.Formatter.formatTableHeading'}"></Label>
+							<table:template>
+								<Text text="{FinancialAccountType}" wrapping="false"></Text>
+							</table:template>
+							<table:customData>
+								<core:CustomData key="p13nData"
+									value='\{"columnKey": "FinancialAccountType", "maxLength": "1"}' />
+							</table:customData>
+						</table:AnalyticalColumn>
+						<!-- Custom Ananlytical Column  Extension for Customer name and city-->
+						<table:AnalyticalColumn > 
+      <Label text="{i18n>nameCity}" />
+      <table:template>
+         <Text text="{CustomerName}{CityName}"></Text>
+      </table:template>
+      <table:customData>
+                              <core:CustomData key="p13nData" value='\{"columnKey": "New Column" \}' />
+                   </table:customData>
+               </table:AnalyticalColumn>
+
+						<!-- With this extension point you're able to extend at the end of 
+							the line items table, i.e. insert columns -->
+						<core:ExtensionPoint
+							name="fin.ar.lineitems.display1.ExtensionPointTableColumnEnd"></core:ExtensionPoint>
+					</table:columns>
+				</table:AnalyticalTable>
+
+			</smarttable:SmartTable>
+
+		</f:content>
+	</f:DynamicPage>
+</mvc:View>

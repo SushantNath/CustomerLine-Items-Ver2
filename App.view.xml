@@ -1,0 +1,13 @@
+<!--
+
+    Copyright (C) 2009-2019 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<mvc:View 
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" 
+	controllerName="fin.ar.lineitems.display1.App" 
+	displayBlock="true" 
+	height="100%">
+	<App id="app" />
+</mvc:View>
