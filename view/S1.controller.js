@@ -14,7 +14,7 @@ sap.ui.define(["sap/fin/arp/lib/lineitems/controller/AbstractController", "sap/m
 			this.initDeferred = jQuery.Deferred();
 		},
 		
-		//Test deployment for WRICEF-7253, dev correction
+		//Test deployment for WRICEF-7253, dev correction-initial commit
 		onInit: function() {
 			A.prototype.onInit.apply(this, arguments);
 			this.setExtendedFooterOptions();
