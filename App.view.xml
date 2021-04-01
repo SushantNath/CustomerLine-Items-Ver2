@@ -6,7 +6,7 @@
 <mvc:View 
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m" 
-	controllerName="fin.ar.lineitems.display1.App" 
+	controllerName="fin.ar.lineitems.display2.App" 
 	displayBlock="true" 
 	height="100%">
 	<App id="app" />

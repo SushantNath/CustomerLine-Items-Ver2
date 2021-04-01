@@ -6,7 +6,7 @@ sap.ui.define(["sap/ui/core/UIComponent","sap/ui/Device","sap/fin/arp/lib/lineit
 	function(UIComponent,Device,ErrorHandler){
 		"use strict";
 	
-		return UIComponent.extend("fin.ar.lineitems.display1.Component", {
+		return UIComponent.extend("fin.ar.lineitems.display2.Component", {
 			metadata : {
 				manifest: "json"
 			},

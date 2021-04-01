@@ -3,7 +3,7 @@
  */
 sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/Device", "sap/fin/arp/lib/lineitems/util/ErrorHandler"], function (U, D, E) {
 	"use strict";
-	return U.extend("fin.ar.lineitems.display1.Component", {
+	return U.extend("fin.ar.lineitems.display2.Component", {
 		metadata: {
 			manifest: "json"
 		},

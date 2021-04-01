@@ -8,15 +8,15 @@ sap.ui.define([
 		"use strict";
 
 		var S1Controller = sap.fin.arp.lib.lineitems.controller.AbstractController.extend(
-			"fin.ar.lineitems.display1.view.S1", {
+			"fin.ar.lineitems.display2.view.S1", {
 			/**
-			 * @memberOf fin.ar.lineitems.display1.view.S1.controller
+			 * @memberOf fin.ar.lineitems.display2.view.S1.controller
 			 */
 
 			constructor: function() {
 				AbstractController.apply(this, arguments);
 				this.sLocalContainerKey = "fin.ar.lineitems";
-				this.sPrefix = "fin.ar.lineitems.display1";
+				this.sPrefix = "fin.ar.lineitems.display2";
 				this.sIconPath = "sap-icon://Fiori5/F0711";
 				this.sOwnSemanticObject = "Customer";
 				this.sCustomerVendorItemTypeKey = "V";

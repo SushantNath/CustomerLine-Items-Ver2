@@ -6,7 +6,7 @@
 -->
 <edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
 	<edmx:DataServices m:DataServiceVersion="2.0">
-		<Schema Namespace="FAR_CUSTOMER_LINE_ITEMS" sap:schema-version="0" xml:lang="en" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+		<Schema Namespace="ZRTF_OD_CUST_LINE_ITEM_SRV" sap:schema-version="0" xml:lang="en" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
 			<EntityType Name="UpdatableItem" sap:content-version="1" sap:label="UpdatableItem">
 				<Key>
 					<PropertyRef Name="CompanyCode"/>
@@ -1620,120 +1620,120 @@
 				<Property MaxLength="1" Name="Code" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:heading="Block ind." sap:label="Payment block" sap:quickinfo="Block Key for Payment" sap:sortable="false" sap:updatable="false"/>
 				<Property MaxLength="20" Name="Name" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Description" sap:quickinfo="Explanation of the Reason for Payment Block" sap:sortable="false" sap:updatable="false"/>
 			</EntityType>
-			<EntityContainer Name="FAR_CUSTOMER_LINE_ITEMS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.UpdatableItem" Name="UpdatableItems" sap:addressable="false" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:label="Updatable Item" sap:pageable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.Item" Name="Items" sap:addressable="false" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:label="Item" sap:pageable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.Customer" Name="Customers" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_H_T001" Name="VL_SH_H_T001" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_GL_ACCT_CA_NO" Name="VL_SH_GL_ACCT_CA_NO" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_GL_ACCT_CA_TEXT" Name="VL_SH_GL_ACCT_CA_TEXT" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_GL_ACCT_CA_FLAGS" Name="VL_SH_GL_ACCT_CA_FLAGS" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_GL_ACCT_CA_KEY" Name="VL_SH_GL_ACCT_CA_KEY" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_GL_ACCT_CC_NO" Name="VL_SH_GL_ACCT_CC_NO" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_GL_ACCT_CC_TEXT" Name="VL_SH_GL_ACCT_CC_TEXT" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_GL_ACCT_CC_FLAGS" Name="VL_SH_GL_ACCT_CC_FLAGS" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_GL_ACCT_CC_ALTERNATIV_NO" Name="VL_SH_GL_ACCT_CC_ALTERNATIV_NO" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_CH_ANLH" Name="VL_CH_ANLH" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:semantics="aggregate" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_CH_ANLA" Name="VL_CH_ANLA" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:semantics="aggregate" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_H_T003" Name="VL_SH_H_T003" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_H_T016" Name="VL_SH_H_T016" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_H_TBSL" Name="VL_SH_H_TBSL" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_J_1BBRANHV" Name="VL_SH_J_1BBRANHV" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_H_T001S" Name="VL_SH_H_T001S" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_CT_TCESSION" Name="VL_CT_TCESSION" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:semantics="aggregate" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_CT_T015W1" Name="VL_CT_T015W1" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:semantics="aggregate" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_MEKKA" Name="VL_SH_MEKKA" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_MEKKB" Name="VL_SH_MEKKB" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_MEKKC" Name="VL_SH_MEKKC" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_MEKKD" Name="VL_SH_MEKKD" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_MEKKE" Name="VL_SH_MEKKE" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_MEKKG" Name="VL_SH_MEKKG" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_MEKKH" Name="VL_SH_MEKKH" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_MEKKI" Name="VL_SH_MEKKI" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_MEKKK" Name="VL_SH_MEKKK" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_MEKKL" Name="VL_SH_MEKKL" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_MEKKM" Name="VL_SH_MEKKM" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_MEKKN" Name="VL_SH_MEKKN" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_MEKKP" Name="VL_SH_MEKKP" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_MEKKS" Name="VL_SH_MEKKS" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_MEKKT" Name="VL_SH_MEKKT" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_MEKKU" Name="VL_SH_MEKKU" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_MEKKV" Name="VL_SH_MEKKV" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_MEKKW" Name="VL_SH_MEKKW" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_MMBSI_MEKK_DBSH_CC_E" Name="VL_SH_MMBSI_MEKK_DBSH_CC_E" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_MMBSI_MEKK_TREX_CC_E" Name="VL_SH_MMBSI_MEKK_TREX_CC_E" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_CH_EKPO" Name="VL_CH_EKPO" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:semantics="aggregate" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_CH_VBEP" Name="VL_CH_VBEP" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:semantics="aggregate" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_CT_FMFCTR" Name="VL_CT_FMFCTR" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:semantics="aggregate" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_H_TGSB" Name="VL_SH_H_TGSB" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_H_T012" Name="VL_SH_H_T012" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_CT_TCURC" Name="VL_CT_TCURC" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:semantics="aggregate" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_H_T014" Name="VL_SH_H_T014" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_DEBIA" Name="VL_SH_DEBIA" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_DEBID" Name="VL_SH_DEBID" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_DEBIE" Name="VL_SH_DEBIE" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_DEBIL" Name="VL_SH_DEBIL" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_DEBIP" Name="VL_SH_DEBIP" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_DEBIT" Name="VL_SH_DEBIT" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_FM_DEBI_FMPSOIS" Name="VL_SH_FM_DEBI_FMPSOIS" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_JVH_VPTNR" Name="VL_SH_JVH_VPTNR" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_DEBIK" Name="VL_SH_DEBIK" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_DEBIM" Name="VL_SH_DEBIM" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_DEBIS" Name="VL_SH_DEBIS" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_DEBIW" Name="VL_SH_DEBIW" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_DEBIZ" Name="VL_SH_DEBIZ" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_REKUNNRCN" Name="VL_SH_REKUNNRCN" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_REKUNNR_VIRAINV" Name="VL_SH_REKUNNR_VIRAINV" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_CT_CSKS" Name="VL_CT_CSKS" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:semantics="aggregate" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_H_T077D" Name="VL_SH_H_T077D" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_FARP_T005" Name="VL_SH_FARP_T005" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_H_T047M" Name="VL_SH_H_T047M" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_H_T040S" Name="VL_SH_H_T040S" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_H_T040" Name="VL_SH_H_T040" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_SH_T007A" Name="VL_SH_SH_T007A" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_PRCTN" Name="VL_SH_PRCTN" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_PRCTS" Name="VL_SH_PRCTS" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_PRPMP" Name="VL_SH_PRPMP" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_PRPMK" Name="VL_SH_PRPMK" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_PRPMZ" Name="VL_SH_PRPMZ" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_PRPMA" Name="VL_SH_PRPMA" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_PRPMB" Name="VL_SH_PRPMB" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_CN_LDST_PS_PR" Name="VL_SH_CN_LDST_PS_PR" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_IAOM_CPROJECTS_WBS" Name="VL_SH_IAOM_CPROJECTS_WBS" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_JVH_PRPMG" Name="VL_SH_JVH_PRPMG" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_FARP_T005S" Name="VL_SH_FARP_T005S" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_CT_T053R" Name="VL_CT_T053R" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:semantics="aggregate" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_SECCODE" Name="VL_SH_SECCODE" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_H_TTXID" Name="VL_SH_H_TTXID" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_CT_T043G" Name="VL_CT_T043G" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:semantics="aggregate" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_H_TTXJ" Name="VL_SH_H_TTXJ" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_H_T074U" Name="VL_SH_H_T074U" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_CT_T042F" Name="VL_CT_T042F" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:semantics="aggregate" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_H_T880" Name="VL_SH_H_T880" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_H_T056" Name="VL_SH_H_T056" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_H_T001W" Name="VL_SH_H_T001W" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_CT_T008" Name="VL_CT_T008" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:semantics="aggregate" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_SH_H_T042Z" Name="VL_SH_H_T042Z" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_FV_KOART" Name="VL_FV_KOART" sap:content-version="1" sap:semantics="fixed-values"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_FV_BSTAT" Name="VL_FV_BSTAT" sap:content-version="1" sap:semantics="fixed-values"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_FV_AUGST" Name="VL_FV_AUGST" sap:content-version="1" sap:semantics="fixed-values"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_FV_FARP_BOOLEAN" Name="VL_FV_FARP_BOOLEAN" sap:content-version="1" sap:semantics="fixed-values"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_FV_XFELD" Name="VL_FV_XFELD" sap:content-version="1" sap:semantics="fixed-values"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_FV_SHKZG" Name="VL_FV_SHKZG" sap:content-version="1" sap:semantics="fixed-values"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_FV_SPERR" Name="VL_FV_SPERR" sap:content-version="1" sap:semantics="fixed-values"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_FV_FAR_SYM_DUE" Name="VL_FV_FAR_SYM_DUE" sap:content-version="1" sap:semantics="fixed-values"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_FV_RANTYP" Name="VL_FV_RANTYP" sap:content-version="1" sap:semantics="fixed-values"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_FV_WVERW" Name="VL_FV_WVERW" sap:content-version="1" sap:semantics="fixed-values"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_FV_ZBFIX" Name="VL_FV_ZBFIX" sap:content-version="1" sap:semantics="fixed-values"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.VL_FV_ZINRT" Name="VL_FV_ZINRT" sap:content-version="1" sap:semantics="fixed-values"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.DunningArea" Name="DunningAreas" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.DunningBlockingReasonCode" Name="DunningBlockingReasonCodes" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.PaymentMethod" Name="PaymentMethods" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.DunningKey" Name="DunningKeys" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.Company" Name="Companies" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
-				<EntitySet EntityType="FAR_CUSTOMER_LINE_ITEMS.PaymentBlockingReasonCode" Name="PaymentBlockingReasonCodes" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+			<EntityContainer Name="ZRTF_OD_CUST_LINE_ITEM_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.UpdatableItem" Name="UpdatableItems" sap:addressable="false" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:label="Updatable Item" sap:pageable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.Item" Name="Items" sap:addressable="false" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:label="Item" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.Customer" Name="Customers" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_H_T001" Name="VL_SH_H_T001" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_GL_ACCT_CA_NO" Name="VL_SH_GL_ACCT_CA_NO" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_GL_ACCT_CA_TEXT" Name="VL_SH_GL_ACCT_CA_TEXT" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_GL_ACCT_CA_FLAGS" Name="VL_SH_GL_ACCT_CA_FLAGS" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_GL_ACCT_CA_KEY" Name="VL_SH_GL_ACCT_CA_KEY" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_GL_ACCT_CC_NO" Name="VL_SH_GL_ACCT_CC_NO" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_GL_ACCT_CC_TEXT" Name="VL_SH_GL_ACCT_CC_TEXT" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_GL_ACCT_CC_FLAGS" Name="VL_SH_GL_ACCT_CC_FLAGS" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_GL_ACCT_CC_ALTERNATIV_NO" Name="VL_SH_GL_ACCT_CC_ALTERNATIV_NO" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_CH_ANLH" Name="VL_CH_ANLH" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:semantics="aggregate" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_CH_ANLA" Name="VL_CH_ANLA" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:semantics="aggregate" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_H_T003" Name="VL_SH_H_T003" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_H_T016" Name="VL_SH_H_T016" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_H_TBSL" Name="VL_SH_H_TBSL" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_J_1BBRANHV" Name="VL_SH_J_1BBRANHV" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_H_T001S" Name="VL_SH_H_T001S" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_CT_TCESSION" Name="VL_CT_TCESSION" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:semantics="aggregate" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_CT_T015W1" Name="VL_CT_T015W1" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:semantics="aggregate" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_MEKKA" Name="VL_SH_MEKKA" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_MEKKB" Name="VL_SH_MEKKB" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_MEKKC" Name="VL_SH_MEKKC" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_MEKKD" Name="VL_SH_MEKKD" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_MEKKE" Name="VL_SH_MEKKE" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_MEKKG" Name="VL_SH_MEKKG" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_MEKKH" Name="VL_SH_MEKKH" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_MEKKI" Name="VL_SH_MEKKI" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_MEKKK" Name="VL_SH_MEKKK" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_MEKKL" Name="VL_SH_MEKKL" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_MEKKM" Name="VL_SH_MEKKM" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_MEKKN" Name="VL_SH_MEKKN" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_MEKKP" Name="VL_SH_MEKKP" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_MEKKS" Name="VL_SH_MEKKS" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_MEKKT" Name="VL_SH_MEKKT" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_MEKKU" Name="VL_SH_MEKKU" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_MEKKV" Name="VL_SH_MEKKV" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_MEKKW" Name="VL_SH_MEKKW" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_MMBSI_MEKK_DBSH_CC_E" Name="VL_SH_MMBSI_MEKK_DBSH_CC_E" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_MMBSI_MEKK_TREX_CC_E" Name="VL_SH_MMBSI_MEKK_TREX_CC_E" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_CH_EKPO" Name="VL_CH_EKPO" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:semantics="aggregate" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_CH_VBEP" Name="VL_CH_VBEP" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:semantics="aggregate" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_CT_FMFCTR" Name="VL_CT_FMFCTR" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:semantics="aggregate" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_H_TGSB" Name="VL_SH_H_TGSB" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_H_T012" Name="VL_SH_H_T012" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_CT_TCURC" Name="VL_CT_TCURC" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:semantics="aggregate" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_H_T014" Name="VL_SH_H_T014" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_DEBIA" Name="VL_SH_DEBIA" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_DEBID" Name="VL_SH_DEBID" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_DEBIE" Name="VL_SH_DEBIE" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_DEBIL" Name="VL_SH_DEBIL" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_DEBIP" Name="VL_SH_DEBIP" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_DEBIT" Name="VL_SH_DEBIT" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_FM_DEBI_FMPSOIS" Name="VL_SH_FM_DEBI_FMPSOIS" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_JVH_VPTNR" Name="VL_SH_JVH_VPTNR" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_DEBIK" Name="VL_SH_DEBIK" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_DEBIM" Name="VL_SH_DEBIM" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_DEBIS" Name="VL_SH_DEBIS" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_DEBIW" Name="VL_SH_DEBIW" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_DEBIZ" Name="VL_SH_DEBIZ" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_REKUNNRCN" Name="VL_SH_REKUNNRCN" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_REKUNNR_VIRAINV" Name="VL_SH_REKUNNR_VIRAINV" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_CT_CSKS" Name="VL_CT_CSKS" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:semantics="aggregate" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_H_T077D" Name="VL_SH_H_T077D" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_FARP_T005" Name="VL_SH_FARP_T005" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_H_T047M" Name="VL_SH_H_T047M" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_H_T040S" Name="VL_SH_H_T040S" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_H_T040" Name="VL_SH_H_T040" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_SH_T007A" Name="VL_SH_SH_T007A" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_PRCTN" Name="VL_SH_PRCTN" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_PRCTS" Name="VL_SH_PRCTS" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_PRPMP" Name="VL_SH_PRPMP" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_PRPMK" Name="VL_SH_PRPMK" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_PRPMZ" Name="VL_SH_PRPMZ" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_PRPMA" Name="VL_SH_PRPMA" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_PRPMB" Name="VL_SH_PRPMB" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_CN_LDST_PS_PR" Name="VL_SH_CN_LDST_PS_PR" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_IAOM_CPROJECTS_WBS" Name="VL_SH_IAOM_CPROJECTS_WBS" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_JVH_PRPMG" Name="VL_SH_JVH_PRPMG" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_FARP_T005S" Name="VL_SH_FARP_T005S" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_CT_T053R" Name="VL_CT_T053R" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:semantics="aggregate" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_SECCODE" Name="VL_SH_SECCODE" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_H_TTXID" Name="VL_SH_H_TTXID" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_CT_T043G" Name="VL_CT_T043G" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:semantics="aggregate" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_H_TTXJ" Name="VL_SH_H_TTXJ" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_H_T074U" Name="VL_SH_H_T074U" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_CT_T042F" Name="VL_CT_T042F" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:semantics="aggregate" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_H_T880" Name="VL_SH_H_T880" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_H_T056" Name="VL_SH_H_T056" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_H_T001W" Name="VL_SH_H_T001W" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_CT_T008" Name="VL_CT_T008" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:semantics="aggregate" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_H_T042Z" Name="VL_SH_H_T042Z" sap:content-version="1" sap:countable="false" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_FV_KOART" Name="VL_FV_KOART" sap:content-version="1" sap:semantics="fixed-values"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_FV_BSTAT" Name="VL_FV_BSTAT" sap:content-version="1" sap:semantics="fixed-values"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_FV_AUGST" Name="VL_FV_AUGST" sap:content-version="1" sap:semantics="fixed-values"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_FV_FARP_BOOLEAN" Name="VL_FV_FARP_BOOLEAN" sap:content-version="1" sap:semantics="fixed-values"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_FV_XFELD" Name="VL_FV_XFELD" sap:content-version="1" sap:semantics="fixed-values"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_FV_SHKZG" Name="VL_FV_SHKZG" sap:content-version="1" sap:semantics="fixed-values"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_FV_SPERR" Name="VL_FV_SPERR" sap:content-version="1" sap:semantics="fixed-values"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_FV_FAR_SYM_DUE" Name="VL_FV_FAR_SYM_DUE" sap:content-version="1" sap:semantics="fixed-values"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_FV_RANTYP" Name="VL_FV_RANTYP" sap:content-version="1" sap:semantics="fixed-values"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_FV_WVERW" Name="VL_FV_WVERW" sap:content-version="1" sap:semantics="fixed-values"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_FV_ZBFIX" Name="VL_FV_ZBFIX" sap:content-version="1" sap:semantics="fixed-values"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_FV_ZINRT" Name="VL_FV_ZINRT" sap:content-version="1" sap:semantics="fixed-values"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.DunningArea" Name="DunningAreas" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.DunningBlockingReasonCode" Name="DunningBlockingReasonCodes" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.PaymentMethod" Name="PaymentMethods" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.DunningKey" Name="DunningKeys" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.Company" Name="Companies" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZRTF_OD_CUST_LINE_ITEM_SRV.PaymentBlockingReasonCode" Name="PaymentBlockingReasonCodes" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
 			</EntityContainer>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.UpdatableItem/CompanyCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.UpdatableItem/CompanyCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Company Codes"/>
@@ -1759,7 +1759,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.UpdatableItem/FinancialAccountType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.UpdatableItem/FinancialAccountType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Account Type"/>
@@ -1778,7 +1778,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.UpdatableItem/AccountingDocumentCategory" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.UpdatableItem/AccountingDocumentCategory" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Document Status"/>
@@ -1797,7 +1797,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/ReconciliationAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/ReconciliationAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="G/L account no. in chart of accounts"/>
@@ -1824,7 +1824,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="GL_ACCT_CA_TEXT" Target="FAR_CUSTOMER_LINE_ITEMS.Item/ReconciliationAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="GL_ACCT_CA_TEXT" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/ReconciliationAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="G/L account description in chart of accounts"/>
@@ -1850,7 +1850,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="GL_ACCT_CA_FLAGS" Target="FAR_CUSTOMER_LINE_ITEMS.Item/ReconciliationAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="GL_ACCT_CA_FLAGS" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/ReconciliationAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="G/L account with delete/lock flag in chart of accounts"/>
@@ -1888,7 +1888,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="GL_ACCT_CA_KEY" Target="FAR_CUSTOMER_LINE_ITEMS.Item/ReconciliationAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="GL_ACCT_CA_KEY" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/ReconciliationAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Key words"/>
@@ -1920,7 +1920,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="GL_ACCT_CC_NO" Target="FAR_CUSTOMER_LINE_ITEMS.Item/ReconciliationAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="GL_ACCT_CC_NO" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/ReconciliationAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="G/L account number in company code"/>
@@ -1946,7 +1946,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="GL_ACCT_CC_TEXT" Target="FAR_CUSTOMER_LINE_ITEMS.Item/ReconciliationAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="GL_ACCT_CC_TEXT" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/ReconciliationAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="G/L account description in company code"/>
@@ -1972,7 +1972,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="GL_ACCT_CC_FLAGS" Target="FAR_CUSTOMER_LINE_ITEMS.Item/ReconciliationAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="GL_ACCT_CC_FLAGS" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/ReconciliationAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="G/L account with delete/lock flag in company code"/>
@@ -2010,7 +2010,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="GL_ACCT_CC_ALTERNATIV_NO" Target="FAR_CUSTOMER_LINE_ITEMS.Item/ReconciliationAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="GL_ACCT_CC_ALTERNATIV_NO" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/ReconciliationAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Alternative account number"/>
@@ -2039,7 +2039,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/MasterFixedAsset" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/MasterFixedAsset" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="CollectionPath" String="VL_CH_ANLH"/>
@@ -2058,7 +2058,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/FixedAsset" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/FixedAsset" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="CollectionPath" String="VL_CH_ANLA"/>
@@ -2081,7 +2081,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/ClearingStatus" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/ClearingStatus" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Clearing Status of Item"/>
@@ -2100,7 +2100,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/AccountingDocumentType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/AccountingDocumentType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Help View for Document Types"/>
@@ -2120,7 +2120,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/BooleanParameter" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/BooleanParameter" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="boolean true/false"/>
@@ -2139,7 +2139,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/Industry" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/Industry" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="&quot;Industry Texts&quot;"/>
@@ -2159,7 +2159,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/PostingKey" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/PostingKey" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Help_View for TBSL"/>
@@ -2188,7 +2188,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/AccountingDocumentCategory" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/AccountingDocumentCategory" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Document Status"/>
@@ -2207,7 +2207,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/CompanyCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/CompanyCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Company Codes"/>
@@ -2233,7 +2233,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/BusinessPlace" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/BusinessPlace" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Business Place"/>
@@ -2256,7 +2256,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/AccountingClerk" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/AccountingClerk" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Help_View for Accounting Clerks"/>
@@ -2280,7 +2280,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/IsAccountsReceivablePledged" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/IsAccountsReceivablePledged" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="CollectionPath" String="VL_CT_TCESSION"/>
@@ -2302,7 +2302,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/DataExchangeInstruction1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/DataExchangeInstruction1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="CollectionPath" String="VL_CT_T015W1"/>
@@ -2326,7 +2326,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/DataExchangeInstruction2" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/DataExchangeInstruction2" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="CollectionPath" String="VL_CT_T015W1"/>
@@ -2350,7 +2350,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/DataExchangeInstruction3" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/DataExchangeInstruction3" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="CollectionPath" String="VL_CT_T015W1"/>
@@ -2374,7 +2374,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/DataExchangeInstruction4" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/DataExchangeInstruction4" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="CollectionPath" String="VL_CT_T015W1"/>
@@ -2398,7 +2398,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="MEKKA" Target="FAR_CUSTOMER_LINE_ITEMS.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="MEKKA" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Purchasing Documents per Asset"/>
@@ -2435,7 +2435,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="MEKKB" Target="FAR_CUSTOMER_LINE_ITEMS.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="MEKKB" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Purchasing Documents per Requirement Tracking Number"/>
@@ -2466,7 +2466,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="MEKKC" Target="FAR_CUSTOMER_LINE_ITEMS.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="MEKKC" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Requests for Quotation per RFQ Date"/>
@@ -2488,7 +2488,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="MEKKD" Target="FAR_CUSTOMER_LINE_ITEMS.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="MEKKD" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Purchase Orders per PO Date"/>
@@ -2510,7 +2510,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="MEKKE" Target="FAR_CUSTOMER_LINE_ITEMS.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="MEKKE" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Schedule Lines per Purchase Requisition"/>
@@ -2538,7 +2538,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="MEKKG" Target="FAR_CUSTOMER_LINE_ITEMS.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="MEKKG" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Purchasing Documents per Order"/>
@@ -2569,7 +2569,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="MEKKH" Target="FAR_CUSTOMER_LINE_ITEMS.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="MEKKH" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Purchase Orders for Services"/>
@@ -2597,7 +2597,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="MEKKI" Target="FAR_CUSTOMER_LINE_ITEMS.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="MEKKI" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Contracts for Services"/>
@@ -2625,7 +2625,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="MEKKK" Target="FAR_CUSTOMER_LINE_ITEMS.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="MEKKK" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Purchasing Documents per Cost Center"/>
@@ -2659,7 +2659,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Purchasing Documents per Vendor"/>
@@ -2694,7 +2694,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="MEKKM" Target="FAR_CUSTOMER_LINE_ITEMS.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="MEKKM" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Purchasing Documents for Material"/>
@@ -2725,7 +2725,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="MEKKN" Target="FAR_CUSTOMER_LINE_ITEMS.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="MEKKN" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Purchasing Documents per Network"/>
@@ -2762,7 +2762,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="MEKKP" Target="FAR_CUSTOMER_LINE_ITEMS.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="MEKKP" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Purchasing Documents per Project"/>
@@ -2793,7 +2793,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="MEKKS" Target="FAR_CUSTOMER_LINE_ITEMS.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="MEKKS" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Purchasing Documents per Collective Number"/>
@@ -2815,7 +2815,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="MEKKT" Target="FAR_CUSTOMER_LINE_ITEMS.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="MEKKT" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Contracts per Agreement Date"/>
@@ -2837,7 +2837,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="MEKKU" Target="FAR_CUSTOMER_LINE_ITEMS.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="MEKKU" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Scheduling Agreements per Agreement Date"/>
@@ -2859,7 +2859,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="MEKKV" Target="FAR_CUSTOMER_LINE_ITEMS.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="MEKKV" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Purchasing Documents per Sales Document"/>
@@ -2896,7 +2896,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="MEKKW" Target="FAR_CUSTOMER_LINE_ITEMS.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="MEKKW" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Purchasing Documents per Supplying Plant"/>
@@ -2924,7 +2924,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="MMBSI_MEKK_DBSH_CC_E" Target="FAR_CUSTOMER_LINE_ITEMS.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="MMBSI_MEKK_DBSH_CC_E" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Search Help for Central Contracts"/>
@@ -3012,7 +3012,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="MMBSI_MEKK_TREX_CC_E" Target="FAR_CUSTOMER_LINE_ITEMS.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="MMBSI_MEKK_TREX_CC_E" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/PurchasingDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Text Search for Central Contracts via Search Engine"/>
@@ -3100,7 +3100,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/PurchasingDocumentItem" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/PurchasingDocumentItem" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="CollectionPath" String="VL_CH_EKPO"/>
@@ -3119,7 +3119,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/DeliveryScheduleLine" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/DeliveryScheduleLine" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="CollectionPath" String="VL_CH_VBEP"/>
@@ -3141,7 +3141,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/FundsManagementCenter" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/FundsManagementCenter" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="CollectionPath" String="VL_CT_FMFCTR"/>
@@ -3166,7 +3166,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/BusinessArea" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/BusinessArea" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Help View for Business Areas"/>
@@ -3186,7 +3186,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/HouseBank" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/HouseBank" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Help_View for Table T012"/>
@@ -3219,7 +3219,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/GLAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/GLAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="G/L account no. in chart of accounts"/>
@@ -3246,7 +3246,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="GL_ACCT_CA_TEXT" Target="FAR_CUSTOMER_LINE_ITEMS.Item/GLAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="GL_ACCT_CA_TEXT" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/GLAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="G/L account description in chart of accounts"/>
@@ -3272,7 +3272,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="GL_ACCT_CA_FLAGS" Target="FAR_CUSTOMER_LINE_ITEMS.Item/GLAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="GL_ACCT_CA_FLAGS" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/GLAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="G/L account with delete/lock flag in chart of accounts"/>
@@ -3310,7 +3310,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="GL_ACCT_CA_KEY" Target="FAR_CUSTOMER_LINE_ITEMS.Item/GLAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="GL_ACCT_CA_KEY" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/GLAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Key words"/>
@@ -3342,7 +3342,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="GL_ACCT_CC_NO" Target="FAR_CUSTOMER_LINE_ITEMS.Item/GLAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="GL_ACCT_CC_NO" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/GLAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="G/L account number in company code"/>
@@ -3368,7 +3368,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="GL_ACCT_CC_TEXT" Target="FAR_CUSTOMER_LINE_ITEMS.Item/GLAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="GL_ACCT_CC_TEXT" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/GLAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="G/L account description in company code"/>
@@ -3394,7 +3394,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="GL_ACCT_CC_FLAGS" Target="FAR_CUSTOMER_LINE_ITEMS.Item/GLAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="GL_ACCT_CC_FLAGS" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/GLAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="G/L account with delete/lock flag in company code"/>
@@ -3432,7 +3432,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="GL_ACCT_CC_ALTERNATIV_NO" Target="FAR_CUSTOMER_LINE_ITEMS.Item/GLAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="GL_ACCT_CC_ALTERNATIV_NO" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/GLAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Alternative account number"/>
@@ -3461,7 +3461,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/AdditionalCurrency1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/AdditionalCurrency1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="CollectionPath" String="VL_CT_TCURC"/>
@@ -3479,7 +3479,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/AdditionalCurrency2" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/AdditionalCurrency2" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="CollectionPath" String="VL_CT_TCURC"/>
@@ -3497,7 +3497,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/CompanyCodeCurrency" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/CompanyCodeCurrency" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="CollectionPath" String="VL_CT_TCURC"/>
@@ -3515,7 +3515,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/CreditControlArea" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/CreditControlArea" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="&quot;Help View Generated For Check Table T014&quot;"/>
@@ -3535,7 +3535,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/AlternativePayeeAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/AlternativePayeeAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers (general)"/>
@@ -3567,7 +3567,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBID" Target="FAR_CUSTOMER_LINE_ITEMS.Item/AlternativePayeeAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBID" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/AlternativePayeeAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers (by company code)"/>
@@ -3602,7 +3602,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIE" Target="FAR_CUSTOMER_LINE_ITEMS.Item/AlternativePayeeAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIE" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/AlternativePayeeAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers by country/company code"/>
@@ -3633,7 +3633,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIL" Target="FAR_CUSTOMER_LINE_ITEMS.Item/AlternativePayeeAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIL" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/AlternativePayeeAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers by country"/>
@@ -3661,7 +3661,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIP" Target="FAR_CUSTOMER_LINE_ITEMS.Item/AlternativePayeeAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIP" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/AlternativePayeeAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers by personnel number"/>
@@ -3686,7 +3686,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIT" Target="FAR_CUSTOMER_LINE_ITEMS.Item/AlternativePayeeAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIT" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/AlternativePayeeAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers by Tax Information"/>
@@ -3726,7 +3726,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="FM_DEBI_FMPSOIS" Target="FAR_CUSTOMER_LINE_ITEMS.Item/AlternativePayeeAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="FM_DEBI_FMPSOIS" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/AlternativePayeeAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Proceed Initially According to Customer Sub-Ledger Account"/>
@@ -3748,7 +3748,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="JVH_VPTNR" Target="FAR_CUSTOMER_LINE_ITEMS.Item/AlternativePayeeAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="JVH_VPTNR" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/AlternativePayeeAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="JV partner in coding block"/>
@@ -3773,7 +3773,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIK" Target="FAR_CUSTOMER_LINE_ITEMS.Item/AlternativePayeeAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIK" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/AlternativePayeeAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers per account group"/>
@@ -3807,7 +3807,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIM" Target="FAR_CUSTOMER_LINE_ITEMS.Item/AlternativePayeeAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIM" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/AlternativePayeeAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers With Lease-Out"/>
@@ -3862,7 +3862,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIS" Target="FAR_CUSTOMER_LINE_ITEMS.Item/AlternativePayeeAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIS" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/AlternativePayeeAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers per sales group"/>
@@ -3908,7 +3908,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIW" Target="FAR_CUSTOMER_LINE_ITEMS.Item/AlternativePayeeAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIW" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/AlternativePayeeAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers with plant reference"/>
@@ -3942,7 +3942,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIZ" Target="FAR_CUSTOMER_LINE_ITEMS.Item/AlternativePayeeAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIZ" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/AlternativePayeeAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers for Head Offices"/>
@@ -3970,7 +3970,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="REKUNNRCN" Target="FAR_CUSTOMER_LINE_ITEMS.Item/AlternativePayeeAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="REKUNNRCN" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/AlternativePayeeAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customer By Real Estate Contract"/>
@@ -4022,7 +4022,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="REKUNNR_VIRAINV" Target="FAR_CUSTOMER_LINE_ITEMS.Item/AlternativePayeeAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="REKUNNR_VIRAINV" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/AlternativePayeeAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customer for Invoice Number (Real Estate)"/>
@@ -4062,7 +4062,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/HeadOffice" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/HeadOffice" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers (general)"/>
@@ -4094,7 +4094,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBID" Target="FAR_CUSTOMER_LINE_ITEMS.Item/HeadOffice" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBID" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/HeadOffice" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers (by company code)"/>
@@ -4129,7 +4129,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIE" Target="FAR_CUSTOMER_LINE_ITEMS.Item/HeadOffice" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIE" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/HeadOffice" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers by country/company code"/>
@@ -4160,7 +4160,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIL" Target="FAR_CUSTOMER_LINE_ITEMS.Item/HeadOffice" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIL" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/HeadOffice" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers by country"/>
@@ -4188,7 +4188,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIP" Target="FAR_CUSTOMER_LINE_ITEMS.Item/HeadOffice" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIP" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/HeadOffice" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers by personnel number"/>
@@ -4213,7 +4213,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIT" Target="FAR_CUSTOMER_LINE_ITEMS.Item/HeadOffice" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIT" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/HeadOffice" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers by Tax Information"/>
@@ -4253,7 +4253,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="FM_DEBI_FMPSOIS" Target="FAR_CUSTOMER_LINE_ITEMS.Item/HeadOffice" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="FM_DEBI_FMPSOIS" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/HeadOffice" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Proceed Initially According to Customer Sub-Ledger Account"/>
@@ -4275,7 +4275,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="JVH_VPTNR" Target="FAR_CUSTOMER_LINE_ITEMS.Item/HeadOffice" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="JVH_VPTNR" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/HeadOffice" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="JV partner in coding block"/>
@@ -4300,7 +4300,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIK" Target="FAR_CUSTOMER_LINE_ITEMS.Item/HeadOffice" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIK" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/HeadOffice" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers per account group"/>
@@ -4334,7 +4334,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIM" Target="FAR_CUSTOMER_LINE_ITEMS.Item/HeadOffice" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIM" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/HeadOffice" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers With Lease-Out"/>
@@ -4389,7 +4389,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIS" Target="FAR_CUSTOMER_LINE_ITEMS.Item/HeadOffice" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIS" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/HeadOffice" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers per sales group"/>
@@ -4435,7 +4435,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIW" Target="FAR_CUSTOMER_LINE_ITEMS.Item/HeadOffice" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIW" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/HeadOffice" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers with plant reference"/>
@@ -4469,7 +4469,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIZ" Target="FAR_CUSTOMER_LINE_ITEMS.Item/HeadOffice" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIZ" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/HeadOffice" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers for Head Offices"/>
@@ -4497,7 +4497,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="REKUNNRCN" Target="FAR_CUSTOMER_LINE_ITEMS.Item/HeadOffice" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="REKUNNRCN" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/HeadOffice" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customer By Real Estate Contract"/>
@@ -4549,7 +4549,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="REKUNNR_VIRAINV" Target="FAR_CUSTOMER_LINE_ITEMS.Item/HeadOffice" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="REKUNNR_VIRAINV" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/HeadOffice" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customer for Invoice Number (Real Estate)"/>
@@ -4589,7 +4589,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/FinancialAccountType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/FinancialAccountType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Account Type"/>
@@ -4608,7 +4608,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/CostCenter" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/CostCenter" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="CollectionPath" String="VL_CT_CSKS"/>
@@ -4633,7 +4633,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/CustomerAccountName" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/CustomerAccountName" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Help_View for T077D"/>
@@ -4658,7 +4658,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/Customer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/Customer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers (general)"/>
@@ -4690,7 +4690,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBID" Target="FAR_CUSTOMER_LINE_ITEMS.Item/Customer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBID" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/Customer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers (by company code)"/>
@@ -4725,7 +4725,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIE" Target="FAR_CUSTOMER_LINE_ITEMS.Item/Customer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIE" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/Customer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers by country/company code"/>
@@ -4756,7 +4756,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIL" Target="FAR_CUSTOMER_LINE_ITEMS.Item/Customer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIL" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/Customer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers by country"/>
@@ -4784,7 +4784,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIP" Target="FAR_CUSTOMER_LINE_ITEMS.Item/Customer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIP" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/Customer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers by personnel number"/>
@@ -4809,7 +4809,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIT" Target="FAR_CUSTOMER_LINE_ITEMS.Item/Customer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIT" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/Customer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers by Tax Information"/>
@@ -4849,7 +4849,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="FM_DEBI_FMPSOIS" Target="FAR_CUSTOMER_LINE_ITEMS.Item/Customer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="FM_DEBI_FMPSOIS" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/Customer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Proceed Initially According to Customer Sub-Ledger Account"/>
@@ -4871,7 +4871,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="JVH_VPTNR" Target="FAR_CUSTOMER_LINE_ITEMS.Item/Customer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="JVH_VPTNR" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/Customer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="JV partner in coding block"/>
@@ -4896,7 +4896,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIK" Target="FAR_CUSTOMER_LINE_ITEMS.Item/Customer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIK" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/Customer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers per account group"/>
@@ -4930,7 +4930,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIM" Target="FAR_CUSTOMER_LINE_ITEMS.Item/Customer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIM" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/Customer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers With Lease-Out"/>
@@ -4985,7 +4985,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIS" Target="FAR_CUSTOMER_LINE_ITEMS.Item/Customer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIS" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/Customer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers per sales group"/>
@@ -5031,7 +5031,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIW" Target="FAR_CUSTOMER_LINE_ITEMS.Item/Customer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIW" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/Customer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers with plant reference"/>
@@ -5065,7 +5065,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIZ" Target="FAR_CUSTOMER_LINE_ITEMS.Item/Customer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIZ" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/Customer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers for Head Offices"/>
@@ -5093,7 +5093,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="REKUNNRCN" Target="FAR_CUSTOMER_LINE_ITEMS.Item/Customer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="REKUNNRCN" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/Customer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customer By Real Estate Contract"/>
@@ -5145,7 +5145,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="REKUNNR_VIRAINV" Target="FAR_CUSTOMER_LINE_ITEMS.Item/Customer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="REKUNNR_VIRAINV" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/Customer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customer for Invoice Number (Real Estate)"/>
@@ -5185,7 +5185,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/CustomerCountry" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/CustomerCountry" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Help_View for Countries"/>
@@ -5208,7 +5208,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/IsMarkedForDeletion" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/IsMarkedForDeletion" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Indicator: Item Marked for Deletion?"/>
@@ -5227,7 +5227,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/DunningArea" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/DunningArea" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Help View T047M"/>
@@ -5250,7 +5250,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/DunningBlockingReasonCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/DunningBlockingReasonCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Help view generated for check table T040S"/>
@@ -5270,7 +5270,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/MaximumDunningLevel" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/MaximumDunningLevel" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Help view generated for check table T040"/>
@@ -5289,7 +5289,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/TaxCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/TaxCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Help View for T007A"/>
@@ -5311,7 +5311,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/ProfitCenter" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/ProfitCenter" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Profit center"/>
@@ -5346,7 +5346,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="PRCTS" Target="FAR_CUSTOMER_LINE_ITEMS.Item/ProfitCenter" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="PRCTS" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/ProfitCenter" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Profit center name"/>
@@ -5375,7 +5375,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/WBSElement" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/WBSElement" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="WBS element: Project definition and description"/>
@@ -5401,7 +5401,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="PRPMK" Target="FAR_CUSTOMER_LINE_ITEMS.Item/WBSElement" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="PRPMK" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/WBSElement" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="WBS element: short identification"/>
@@ -5423,7 +5423,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="PRPMZ" Target="FAR_CUSTOMER_LINE_ITEMS.Item/WBSElement" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="PRPMZ" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/WBSElement" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="WBS element: persons responsible"/>
@@ -5445,7 +5445,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="PRPMA" Target="FAR_CUSTOMER_LINE_ITEMS.Item/WBSElement" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="PRPMA" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/WBSElement" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="WBS: Account assignment elements"/>
@@ -5464,7 +5464,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="PRPMB" Target="FAR_CUSTOMER_LINE_ITEMS.Item/WBSElement" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="PRPMB" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/WBSElement" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="WBS: Billing elements"/>
@@ -5483,7 +5483,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="CN_LDST_PS_PR" Target="FAR_CUSTOMER_LINE_ITEMS.Item/WBSElement" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="CN_LDST_PS_PR" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/WBSElement" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="WBS Element, Short Text"/>
@@ -5508,7 +5508,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="IAOM_CPROJECTS_WBS" Target="FAR_CUSTOMER_LINE_ITEMS.Item/WBSElement" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="IAOM_CPROJECTS_WBS" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/WBSElement" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="WBS Elements with Assigned cProjects Project Elements"/>
@@ -5554,7 +5554,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="JVH_PRPMG" Target="FAR_CUSTOMER_LINE_ITEMS.Item/WBSElement" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="JVH_PRPMG" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/WBSElement" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Joint Venture"/>
@@ -5594,7 +5594,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/BalanceTransactionCurrency" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/BalanceTransactionCurrency" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="CollectionPath" String="VL_CT_TCURC"/>
@@ -5612,7 +5612,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/PaymentCurrency" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/PaymentCurrency" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="CollectionPath" String="VL_CT_TCURC"/>
@@ -5630,7 +5630,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/Region" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/Region" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Search help for region (table T005S)"/>
@@ -5655,7 +5655,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/PaymentDifferenceReason" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/PaymentDifferenceReason" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="CollectionPath" String="VL_CT_T053R"/>
@@ -5677,7 +5677,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/TaxSection" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/TaxSection" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Section Code"/>
@@ -5702,7 +5702,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/DebitCreditCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/DebitCreditCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Debit/Credit Indicator"/>
@@ -5721,7 +5721,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/CustomerIsBlockedForPosting" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/CustomerIsBlockedForPosting" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Indicator: Has the Physical Inventory Been Blocked?"/>
@@ -5740,7 +5740,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/DueNetSymbol" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/DueNetSymbol" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Line Item Is Due Net?"/>
@@ -5759,7 +5759,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/CashDateDueNetSymbol" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/CashDateDueNetSymbol" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Line Item Cash Discount 1 Is Due?"/>
@@ -5778,7 +5778,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/AccountingDocumentTextCategory" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/AccountingDocumentTextCategory" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Help View For SAPscript Text ID Table TTXID"/>
@@ -5800,7 +5800,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/ToleranceGroup" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/ToleranceGroup" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="CollectionPath" String="VL_CT_T043G"/>
@@ -5822,7 +5822,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/TaxJurisdiction" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/TaxJurisdiction" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Help View for TTXJ (Tax Jurisdiction Codes)"/>
@@ -5844,7 +5844,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/SpecialGeneralLedgerCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/SpecialGeneralLedgerCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Help_View for T074U"/>
@@ -5868,7 +5868,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/PaymentMethodSupplement" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/PaymentMethodSupplement" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="CollectionPath" String="VL_CT_T042F"/>
@@ -5886,7 +5886,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/TradingPartnerCompanyID" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/TradingPartnerCompanyID" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Help View for displaying company"/>
@@ -5912,7 +5912,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/TreasuryContractType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/TreasuryContractType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Contract Type"/>
@@ -5931,7 +5931,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/InterestCalculationCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/InterestCalculationCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Texts For Interest Indicators"/>
@@ -5951,7 +5951,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/TransactionCurrency" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/TransactionCurrency" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="CollectionPath" String="VL_CT_TCURC"/>
@@ -5969,7 +5969,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/Plant" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/Plant" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Possible Entries for Plants"/>
@@ -6007,7 +6007,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/BillOfExchangeUsage" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/BillOfExchangeUsage" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Bill of Exchange Usage Type"/>
@@ -6026,7 +6026,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/DocumentArchivedIndiator" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/DocumentArchivedIndiator" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Indicator: Has the Document Been Archived ?"/>
@@ -6045,7 +6045,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/IsCleared" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/IsCleared" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Indicator: Has the Item Been Cleared?"/>
@@ -6064,7 +6064,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/IsOneTimeAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/IsOneTimeAccount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Indicator: Is the Account a One-Time Account?"/>
@@ -6083,7 +6083,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/IsCashDiscount1Due" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/IsCashDiscount1Due" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Indicator: Cash Discount Term 1 Is Due on Item?"/>
@@ -6102,7 +6102,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/IsDueNet" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/IsDueNet" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Indicator: Item is due net?"/>
@@ -6121,7 +6121,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/IsPaytAdviceSentByEDI" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/IsPaytAdviceSentByEDI" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Indicator: Send Payment Advices by EDI"/>
@@ -6140,7 +6140,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/IsNegativePosting" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/IsNegativePosting" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Indicator: Negative Posting"/>
@@ -6159,7 +6159,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/IsSinglePayment" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/IsSinglePayment" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Indicator: Pay All Items Separately ?"/>
@@ -6178,7 +6178,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/HasPaymentOrder" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/HasPaymentOrder" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Indicator: Payment Order Exists for this Item"/>
@@ -6197,7 +6197,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/IsClearingReversed" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/IsClearingReversed" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Indicator: Clearing was Reversed"/>
@@ -6216,7 +6216,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/IsDisputed" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/IsDisputed" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Indicator: Disputed item?"/>
@@ -6235,7 +6235,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/HasText" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/HasText" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Indicator: Does a text exist?"/>
@@ -6254,7 +6254,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/IsSalesRelated" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/IsSalesRelated" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Indicator: Sales-Related Item ?"/>
@@ -6273,7 +6273,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/IsUsedInPaymentTransaction" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/IsUsedInPaymentTransaction" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Indicator: Is Posting Key Used in a Payment Transaction?"/>
@@ -6292,7 +6292,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/AlternativePayerIsAllowed" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/AlternativePayerIsAllowed" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Indicator: Alternative Payee in Document Allowed"/>
@@ -6311,7 +6311,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/CustomerPaymentBlockingReason" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/CustomerPaymentBlockingReason" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="CollectionPath" String="VL_CT_T008"/>
@@ -6329,7 +6329,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/FixedCashDiscount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/FixedCashDiscount" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Fixed Payment Terms"/>
@@ -6348,7 +6348,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/IntrstCalcFrequencyInMonths" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/IntrstCalcFrequencyInMonths" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Interest Calculation Frequency in Months"/>
@@ -6367,7 +6367,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/PaymentMethod" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/PaymentMethod" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Help View for Payment Methods"/>
@@ -6390,7 +6390,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/PaymentBlockingReason" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/PaymentBlockingReason" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="CollectionPath" String="VL_CT_T008"/>
@@ -6408,7 +6408,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item/TargetTaxCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item/TargetTaxCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Help View for T007A"/>
@@ -6430,7 +6430,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Customer/CustomerId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Customer/CustomerId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers (general)"/>
@@ -6462,7 +6462,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBID" Target="FAR_CUSTOMER_LINE_ITEMS.Customer/CustomerId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBID" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Customer/CustomerId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers (by company code)"/>
@@ -6497,7 +6497,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIE" Target="FAR_CUSTOMER_LINE_ITEMS.Customer/CustomerId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIE" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Customer/CustomerId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers by country/company code"/>
@@ -6528,7 +6528,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIL" Target="FAR_CUSTOMER_LINE_ITEMS.Customer/CustomerId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIL" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Customer/CustomerId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers by country"/>
@@ -6556,7 +6556,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIP" Target="FAR_CUSTOMER_LINE_ITEMS.Customer/CustomerId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIP" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Customer/CustomerId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers by personnel number"/>
@@ -6581,7 +6581,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIT" Target="FAR_CUSTOMER_LINE_ITEMS.Customer/CustomerId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIT" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Customer/CustomerId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers by Tax Information"/>
@@ -6621,7 +6621,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="FM_DEBI_FMPSOIS" Target="FAR_CUSTOMER_LINE_ITEMS.Customer/CustomerId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="FM_DEBI_FMPSOIS" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Customer/CustomerId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Proceed Initially According to Customer Sub-Ledger Account"/>
@@ -6643,7 +6643,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="JVH_VPTNR" Target="FAR_CUSTOMER_LINE_ITEMS.Customer/CustomerId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="JVH_VPTNR" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Customer/CustomerId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="JV partner in coding block"/>
@@ -6668,7 +6668,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIK" Target="FAR_CUSTOMER_LINE_ITEMS.Customer/CustomerId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIK" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Customer/CustomerId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers per account group"/>
@@ -6702,7 +6702,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIM" Target="FAR_CUSTOMER_LINE_ITEMS.Customer/CustomerId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIM" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Customer/CustomerId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers With Lease-Out"/>
@@ -6757,7 +6757,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIS" Target="FAR_CUSTOMER_LINE_ITEMS.Customer/CustomerId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIS" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Customer/CustomerId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers per sales group"/>
@@ -6803,7 +6803,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIW" Target="FAR_CUSTOMER_LINE_ITEMS.Customer/CustomerId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIW" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Customer/CustomerId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers with plant reference"/>
@@ -6837,7 +6837,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="DEBIZ" Target="FAR_CUSTOMER_LINE_ITEMS.Customer/CustomerId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="DEBIZ" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Customer/CustomerId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customers for Head Offices"/>
@@ -6865,7 +6865,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="REKUNNRCN" Target="FAR_CUSTOMER_LINE_ITEMS.Customer/CustomerId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="REKUNNRCN" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Customer/CustomerId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customer By Real Estate Contract"/>
@@ -6917,7 +6917,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Qualifier="REKUNNR_VIRAINV" Target="FAR_CUSTOMER_LINE_ITEMS.Customer/CustomerId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Qualifier="REKUNNR_VIRAINV" Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Customer/CustomerId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Customer for Invoice Number (Real Estate)"/>
@@ -6957,7 +6957,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.VL_SH_DEBIA/LAND1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_DEBIA/LAND1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="Label" String="Help_View for Countries"/>
@@ -6980,7 +6980,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.VL_SH_H_T001/WAERS" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_H_T001/WAERS" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="CollectionPath" String="VL_CT_TCURC"/>
@@ -6998,7 +6998,7 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.VL_SH_H_T077D/XCPDS" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.VL_SH_H_T077D/XCPDS" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
 					<Record>
 						<PropertyValue Property="CollectionPath" String="VL_FV_FARP_BOOLEAN"/>
@@ -7016,8 +7016,8 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="FAR_CUSTOMER_LINE_ITEMS.Item" xmlns="http://docs.oasis-open.org/odata/ns/edm">
-				<Annotation Qualifier="fin.ar.lineitems.display1.CustomerGroup" Term="com.sap.vocabularies.UI.v1.FieldGroup">
+			<Annotations Target="ZRTF_OD_CUST_LINE_ITEM_SRV.Item" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Qualifier="fin.ar.lineitems.display2.CustomerGroup" Term="com.sap.vocabularies.UI.v1.FieldGroup">
 					<Record>
 						<PropertyValue Property="Label" String="Customer"/>
 						<PropertyValue Property="Data">
@@ -7092,7 +7092,7 @@
 						</PropertyValue>
 					</Record>
 				</Annotation>
-				<Annotation Qualifier="fin.ar.lineitems.display1.AccountingDocumentGroup" Term="com.sap.vocabularies.UI.v1.FieldGroup">
+				<Annotation Qualifier="fin.ar.lineitems.display2.AccountingDocumentGroup" Term="com.sap.vocabularies.UI.v1.FieldGroup">
 					<Record>
 						<PropertyValue Property="Label" String="Accounting Document"/>
 						<PropertyValue Property="Data">
@@ -7254,7 +7254,7 @@
 						</PropertyValue>
 					</Record>
 				</Annotation>
-				<Annotation Qualifier="fin.ar.lineitems.display1.ClearingGroup" Term="com.sap.vocabularies.UI.v1.FieldGroup">
+				<Annotation Qualifier="fin.ar.lineitems.display2.ClearingGroup" Term="com.sap.vocabularies.UI.v1.FieldGroup">
 					<Record>
 						<PropertyValue Property="Label" String="Clearing"/>
 						<PropertyValue Property="Data">
@@ -7281,7 +7281,7 @@
 						</PropertyValue>
 					</Record>
 				</Annotation>
-				<Annotation Qualifier="fin.ar.lineitems.display1.DiscountGroup" Term="com.sap.vocabularies.UI.v1.FieldGroup">
+				<Annotation Qualifier="fin.ar.lineitems.display2.DiscountGroup" Term="com.sap.vocabularies.UI.v1.FieldGroup">
 					<Record>
 						<PropertyValue Property="Label" String="Discount"/>
 						<PropertyValue Property="Data">
@@ -7338,7 +7338,7 @@
 						</PropertyValue>
 					</Record>
 				</Annotation>
-				<Annotation Qualifier="fin.ar.lineitems.display1.DunningGroup" Term="com.sap.vocabularies.UI.v1.FieldGroup">
+				<Annotation Qualifier="fin.ar.lineitems.display2.DunningGroup" Term="com.sap.vocabularies.UI.v1.FieldGroup">
 					<Record>
 						<PropertyValue Property="Label" String="Dunning"/>
 						<PropertyValue Property="Data">
@@ -7362,7 +7362,7 @@
 						</PropertyValue>
 					</Record>
 				</Annotation>
-				<Annotation Qualifier="fin.ar.lineitems.display1.PaymentGroup" Term="com.sap.vocabularies.UI.v1.FieldGroup">
+				<Annotation Qualifier="fin.ar.lineitems.display2.PaymentGroup" Term="com.sap.vocabularies.UI.v1.FieldGroup">
 					<Record>
 						<PropertyValue Property="Label" String="Payment"/>
 						<PropertyValue Property="Data">
@@ -7464,7 +7464,7 @@
 						</PropertyValue>
 					</Record>
 				</Annotation>
-				<Annotation Qualifier="fin.ar.lineitems.display1.RefObjectsGroup" Term="com.sap.vocabularies.UI.v1.FieldGroup">
+				<Annotation Qualifier="fin.ar.lineitems.display2.RefObjectsGroup" Term="com.sap.vocabularies.UI.v1.FieldGroup">
 					<Record>
 						<PropertyValue Property="Label" String="Referenced Objects"/>
 						<PropertyValue Property="Data">
@@ -7527,7 +7527,7 @@
 						</PropertyValue>
 					</Record>
 				</Annotation>
-				<Annotation Qualifier="fin.ar.lineitems.display1.TaxGroup" Term="com.sap.vocabularies.UI.v1.FieldGroup">
+				<Annotation Qualifier="fin.ar.lineitems.display2.TaxGroup" Term="com.sap.vocabularies.UI.v1.FieldGroup">
 					<Record>
 						<PropertyValue Property="Label" String="Tax"/>
 						<PropertyValue Property="Data">

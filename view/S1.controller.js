@@ -3,18 +3,18 @@
  */
 sap.ui.define(["sap/fin/arp/lib/lineitems/controller/AbstractController", "sap/m/MessageBox"], function(A, M) {
 	"use strict";
-	var S = sap.fin.arp.lib.lineitems.controller.AbstractController.extend("fin.ar.lineitems.display1.view.S1", {
+	var S = sap.fin.arp.lib.lineitems.controller.AbstractController.extend("fin.ar.lineitems.display2.view.S1", {
 		constructor: function() {
 			A.apply(this, arguments);
 			this.sLocalContainerKey = "fin.ar.lineitems";
-			this.sPrefix = "fin.ar.lineitems.display1";
+			this.sPrefix = "fin.ar.lineitems.display2";
 			this.sIconPath = "sap-icon://Fiori5/F0711";
 			this.sOwnSemanticObject = "Customer";
 			this.sCustomerVendorItemTypeKey = "V";
 			this.initDeferred = jQuery.Deferred();
 		},
 		
-		//Test deployment for WRICEF-7253, dev correction-initial commit
+		//Test deployment for WRICEF-7253, dev correction-initial commit- 2nd deploy
 		onInit: function() {
 			A.prototype.onInit.apply(this, arguments);
 			this.setExtendedFooterOptions();

@@ -2,7 +2,7 @@
     "_version": "1.6.0",
     "sap.app": {
         "_version": "1.2.0",
-        "id": "fin.ar.lineitems.display1",
+        "id": "fin.ar.lineitems.display2",
         "type": "application",
         "i18n": "i18n/i18n.properties",
         "applicationVersion": {
@@ -25,16 +25,20 @@
             }
         },
         "dataSources": {
-            "FAR_CUSTOMER_LINE_ITEMS": {
-                "uri": "/sap/opu/odata/sap/FAR_CUSTOMER_LINE_ITEMS",
+            "ZRTF_OD_CUST_LINE_ITEM_SRV": {
+                "uri": "/sap/opu/odata/sap/ZRTF_OD_CUST_LINE_ITEM_SRV/",
                 "type": "OData",
                 "settings": {
                     "odataVersion": "2.0",
-                    "localUri": "./model/metadata.xml"
+                    "localUri": "localService/metadata.xml"
                 }
             }
         },
-        "resources": "resources.json"
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "servicecatalog.connectivityComponent",
+            "version": "0.0.0"
+        }
     },
     "sap.ui": {
         "_version": "1.1.0",
@@ -55,7 +59,7 @@
     },
     "sap.ui5": {
         "_version": "1.1.0",
-        "rootView": "fin.ar.lineitems.display1.App",
+        "rootView": "fin.ar.lineitems.display2.App",
         "resources": {
             "js": [],
             "css": []
@@ -89,14 +93,14 @@
         },
         "config": {
             "fullWidth": true,
-            "serviceUrl": "/sap/opu/odata/sap/FAR_CUSTOMER_LINE_ITEMS",
+            "serviceUrl": "/sap/opu/odata/sap/ZRTF_OD_CUST_LINE_ITEM_SRV",
             "sapFiori2Adaptation": true
         },
         "models": {
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "fin.ar.lineitems.display1.i18n.i18n"
+                    "bundleName": "fin.ar.lineitems.display2.i18n.i18n"
                 }
             },
             "i18nLib": {
@@ -106,7 +110,7 @@
                 }
             },
             "": {
-                "dataSource": "FAR_CUSTOMER_LINE_ITEMS",
+                "dataSource": "ZRTF_OD_CUST_LINE_ITEM_SRV",
                 "type": "sap.ui.model.odata.v2.ODataModel",
                 "settings": {
                     "metadataUrlParams": {
@@ -121,7 +125,7 @@
         "routing": {
             "config": {
                 "viewType": "XML",
-                "viewPath": "fin.ar.lineitems.display1.view",
+                "viewPath": "fin.ar.lineitems.display2.view",
                 "controlId": "app",
                 "controlAggregation": "pages",
                 "routerClass": "sap.m.routing.Router",
@@ -163,7 +167,7 @@
     },
     "sap.platform.abap": {
         "_version": "1.1.0",
-        "uri": "/sap/bc/ui5_ui5/sap/zmancustlinit"
+        "uri": "/sap/bc/ui5_ui5/sap/zmancustlinit1"
     },
     "sap.fiori": {
         "_version": "1.1.0",
